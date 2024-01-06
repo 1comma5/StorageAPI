@@ -15,4 +15,5 @@ public class Supplier
     [ForeignKey("ContactPerson")]
     public int ContactPersonId { get; set; }
     public ContactPerson ContactPerson { get; set; }
+    
 }
