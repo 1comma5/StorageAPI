@@ -30,7 +30,7 @@ public class ApplicationContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseNpgsql("Host=26.252.200.44;Port=5432;Database=storage_service;Username=postgres;Password=1"); // Martik
-        // optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=storage_service;Username=postgres;Password=1"); // Kaza
+        //optionsBuilder.UseNpgsql("Host=26.252.200.44;Port=5432;Database=storage_service;Username=postgres;Password=1"); // Martik
+        optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=storage_service;Username=postgres;Password=1"); // Kaza
     }
 }
