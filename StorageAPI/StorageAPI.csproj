@@ -23,6 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Scripts\Interface\" />
       <Folder Include="Scripts\Models\" />
     </ItemGroup>
 

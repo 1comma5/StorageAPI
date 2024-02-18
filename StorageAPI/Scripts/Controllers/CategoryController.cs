@@ -18,8 +18,38 @@ public class CategoryController : ControllerBase
     }
     
     [HttpGet ("get")] 
-    public async Task<Category> GetCategory([FromQuery] string id)
+    public async Task<Category?> Get(string id)
     {
-        return await _categoryService.GetCategory(id);
+        return await _categoryService.Get(id);
+    }
+    
+    [HttpGet ("get-all")]
+    public async Task<List<Category?>> GetAll()
+    {
+        return await _categoryService.GetAll();
+    }
+    
+    [HttpPost ("add")]
+    public async Task<IActionResult> Post(Category? category)
+    {
+        var temp = await _categoryService.Add(category);
+        if (temp == null) return BadRequest();
+        return Ok();
+    }
+    
+    [HttpPut ("update")]
+    public async Task<IActionResult> Put(Category? category)
+    {
+        var temp = await _categoryService.Update(category);
+        if (temp == null) return BadRequest();
+        return Ok();
+    }
+    
+    [HttpDelete ("delete")]
+    public async Task<IActionResult> Delete(string id)
+    {
+        var temp = await _categoryService.Delete(id);
+        if (!temp) return BadRequest();
+        return Ok();
     }
 }

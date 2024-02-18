@@ -1,32 +1,48 @@
-using StorageAPI.Scripts.Interface;
+using Microsoft.EntityFrameworkCore;
+using StorageAPI.Scripts.Entities;
 
 namespace StorageAPI.Scripts.Services;
 
-public class CategoryService : IBaseService
+public class CategoryService
 {
-    public Task<T> Get<T>(string id) where T : class
+    private readonly StorageDbContext _context;
+    
+    public CategoryService(StorageDbContext context)
     {
-        private readonly CategoryService _categoryService;
-        throw new NotImplementedException();
+        _context = context;
     }
-
-    public Task<T> Create<T>(T entity) where T : class
+    
+    public async Task<Category?> Get(string id)
     {
-        throw new NotImplementedException();
+        return await _context.Categories.FindAsync(id);
     }
-
-    public Task<T> Update<T>(T entity) where T : class
+    
+    public async Task<Category?> Add(Category? category)
     {
-        throw new NotImplementedException();
+        await _context.Categories.AddAsync(category);
+        await _context.SaveChangesAsync();
+        return category;
     }
-
-    public Task<T> Delete<T>(string id) where T : class
+    
+    public async Task<Category?> Update(Category? category)
     {
-        throw new NotImplementedException();
+        _context.Categories.Update(category);
+        await _context.SaveChangesAsync();
+        return category;
     }
-
-    public Task<List<T>> GetAll<T>() where T : class
+    
+    public async Task<bool> Delete(string id)
     {
-        throw new NotImplementedException();
+        var category = await _context.Categories.FindAsync(id);
+        if (category == null) return false;
+        category.IsDeleted = true;
+        _context.Categories.Update(category);
+        await _context.SaveChangesAsync();
+        return true;
+    }
+    
+    public async Task<List<Category?>> GetAll()
+    {
+        return await _context.Categories.ToListAsync();
     }
 }

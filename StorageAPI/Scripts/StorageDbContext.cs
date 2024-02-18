@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using StorageAPI.Scripts.Entities;
 
-public class ApplicationContext : DbContext
+public class StorageDbContext : DbContext
 {
-    public DbSet<Category> Categories { get; set; } = null!;
+    public DbSet<Category?> Categories { get; set; } = null!;
     public DbSet<Client> Clients  { get; set; } = null!;
     public DbSet<ContactPerson> ContactPersons { get; set; } = null!;
     public DbSet<Employee> Employees  { get; set; } = null!;
@@ -23,7 +23,7 @@ public class ApplicationContext : DbContext
     public DbSet<UnitOfMeasure> UnitOfMeasures  { get; set; } = null!;
     public DbSet<Warehouse> Warehouses  { get; set; } = null!;
     
-    public ApplicationContext()
+    public StorageDbContext()
     {
         Database.EnsureCreated();
     }

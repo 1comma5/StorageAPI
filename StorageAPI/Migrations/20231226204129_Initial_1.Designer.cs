@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace StorageAPI.Migrations
 {
-    [DbContext(typeof(ApplicationContext))]
+    [DbContext(typeof(StorageDbContext))]
     [Migration("20231226204129_Initial_1")]
     partial class Initial_1
     {
