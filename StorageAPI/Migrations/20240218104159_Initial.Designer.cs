@@ -12,7 +12,7 @@ using StorageAPI.Scripts;
 namespace StorageAPI.Migrations
 {
     [DbContext(typeof(StorageDbContext))]
-    [Migration("20240218092250_Initial")]
+    [Migration("20240218104159_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
