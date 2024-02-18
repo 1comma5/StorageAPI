@@ -7,6 +7,7 @@ public class StorageLocationProduct
 {
     [Key]
     public int Id { get; set; }
+    public bool IsDeleted { get; set; }
 
     [ForeignKey("Product")]
     public int ProductId { get; set; }

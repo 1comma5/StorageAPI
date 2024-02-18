@@ -7,6 +7,7 @@ public class EmployeeWarehouse
 {
     [Key]
     public int Id { get; set; }
+    public bool IsDeleted { get; set; }
 
     [ForeignKey("WarehouseId")]
     public Warehouse Warehouse { get; set; }

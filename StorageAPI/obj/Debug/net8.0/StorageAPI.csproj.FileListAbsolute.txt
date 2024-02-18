@@ -85,3 +85,4 @@ E:\Projects\StorageAPI\StorageAPI\bin\Debug\net8.0\StorageAPI.dll
 E:\Projects\StorageAPI\StorageAPI\bin\Debug\net8.0\StorageAPI.pdb
 E:\Projects\StorageAPI\StorageAPI\obj\Debug\net8.0\StorageAPI.genruntimeconfig.cache
 E:\Projects\StorageAPI\StorageAPI\obj\Debug\net8.0\ref\StorageAPI.dll
+W:\VKR\Server\StorageAPI\StorageAPI\obj\Debug\net8.0\StorageAPI.sourcelink.json

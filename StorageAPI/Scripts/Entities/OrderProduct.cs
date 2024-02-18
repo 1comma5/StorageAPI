@@ -7,6 +7,7 @@ public class OrderProduct
 {
     [Key]
     public int Id { get; set; }
+    public bool IsDeleted { get; set; }
 
     [ForeignKey("OrderId")]
     public Order Order { get; set; }

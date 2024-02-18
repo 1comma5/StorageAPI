@@ -7,6 +7,7 @@ public class Order
 {
     [Key]
     public int Id { get; set; }
+    public bool IsDeleted { get; set; }
 
     [ForeignKey("ClientId")]
     public Client Client { get; set; }

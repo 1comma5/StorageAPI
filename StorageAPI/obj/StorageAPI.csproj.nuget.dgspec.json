@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\projects\\StorageAPI\\StorageAPI\\StorageAPI.csproj": {}
+    "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\StorageAPI.csproj": {}
   },
   "projects": {
-    "E:\\projects\\StorageAPI\\StorageAPI\\StorageAPI.csproj": {
+    "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\StorageAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\projects\\StorageAPI\\StorageAPI\\StorageAPI.csproj",
+        "projectUniqueName": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\StorageAPI.csproj",
         "projectName": "StorageAPI",
-        "projectPath": "E:\\projects\\StorageAPI\\StorageAPI\\StorageAPI.csproj",
-        "packagesPath": "C:\\Users\\martm\\.nuget\\packages\\",
-        "outputPath": "E:\\projects\\StorageAPI\\StorageAPI\\obj\\",
+        "projectPath": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\StorageAPI.csproj",
+        "packagesPath": "C:\\Users\\aa_va\\.nuget\\packages\\",
+        "outputPath": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\martm\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\aa_va\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -90,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\martm\\.dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

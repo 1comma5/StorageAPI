@@ -7,6 +7,7 @@ public class StorageLocation
 {
     [Key]
     public int Id { get; set; }
+    public bool IsDeleted { get; set; }
 
     [ForeignKey("StorageParameters")]
     public int StorageParametersId { get; set; }

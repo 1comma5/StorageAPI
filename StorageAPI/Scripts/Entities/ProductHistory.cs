@@ -7,6 +7,7 @@ public class ProductHistory
 {
     [Key]
     public int Id { get; set; }
+    public bool IsDeleted { get; set; }
     public DateTime Date { get; set; }
 
     [ForeignKey("OperationType")]
