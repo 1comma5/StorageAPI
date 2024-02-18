@@ -23,9 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Scripts\Controllers\" />
       <Folder Include="Scripts\Models\" />
-      <Folder Include="Scripts\Services\" />
     </ItemGroup>
 
 </Project>
