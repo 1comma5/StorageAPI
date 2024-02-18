@@ -1,9 +1,18 @@
 using Microsoft.EntityFrameworkCore;
 using StorageAPI.Scripts.Entities;
 
+namespace StorageAPI.Scripts;
+
 public class StorageDbContext : DbContext
 {
-    public DbSet<Category?> Categories { get; set; } = null!;
+    public StorageDbContext(DbContextOptions<StorageDbContext> options) : base(options) { }
+    
+    public StorageDbContext()
+    {
+        Database.EnsureCreated();
+    }
+    
+    public DbSet<Category> Categories { get; set; } = null!;
     public DbSet<Client> Clients  { get; set; } = null!;
     public DbSet<ContactPerson> ContactPersons { get; set; } = null!;
     public DbSet<Employee> Employees  { get; set; } = null!;
@@ -22,15 +31,11 @@ public class StorageDbContext : DbContext
     public DbSet<Supplier> Suppliers  { get; set; } = null!;
     public DbSet<UnitOfMeasure> UnitOfMeasures  { get; set; } = null!;
     public DbSet<Warehouse> Warehouses  { get; set; } = null!;
-    
-    public StorageDbContext()
-    {
-        Database.EnsureCreated();
-    }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         //optionsBuilder.UseNpgsql("Host=26.252.200.44;Port=5432;Database=storage_service;Username=postgres;Password=1"); // Martik
-        optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=storage_service;Username=postgres;Password=1"); // Kaza
+        //optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=storage_service;Username=postgres;Password=1"); // Kaza
+        optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=storage_service;Username=postgres;Password=2560"); // Martik-local
     }
 }

@@ -1,15 +1,27 @@
+using Microsoft.EntityFrameworkCore;
+using StorageAPI.Scripts;
+using StorageAPI.Scripts.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<StorageDbContext>(options =>
+{
+    options.UseNpgsql("Host=localhost;Port=5432;Database=storage_service;Username=postgres;Password=2560");
+    // options.UseNpgsql("Host=localhost;Port=5432;Database=storage_service;Username=postgres;Password=2560");
+    // options.UseNpgsql("Host=localhost;Port=5432;Database=storage_service;Username=postgres;Password=2560");
+});
+
+// Add services
+builder.Services.AddScoped<CategoryService>();
+
+
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

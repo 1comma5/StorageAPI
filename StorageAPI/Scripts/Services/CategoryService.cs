@@ -3,46 +3,40 @@ using StorageAPI.Scripts.Entities;
 
 namespace StorageAPI.Scripts.Services;
 
-public class CategoryService
+public class CategoryService(StorageDbContext context)
 {
-    private readonly StorageDbContext _context;
-    
-    public CategoryService(StorageDbContext context)
-    {
-        _context = context;
-    }
-    
     public async Task<Category?> Get(string id)
     {
-        return await _context.Categories.FindAsync(id);
+        return await context.Categories.FindAsync(id);
     }
     
-    public async Task<Category?> Add(Category? category)
+    public async Task<Category?> Add(Category category)
     {
-        await _context.Categories.AddAsync(category);
-        await _context.SaveChangesAsync();
+        category.IsDeleted = false;
+        await context.Categories.AddAsync(category);
+        await context.SaveChangesAsync();
         return category;
     }
     
-    public async Task<Category?> Update(Category? category)
+    public async Task<Category?> Update(Category category)
     {
-        _context.Categories.Update(category);
-        await _context.SaveChangesAsync();
+        context.Categories.Update(category);
+        await context.SaveChangesAsync();
         return category;
     }
     
     public async Task<bool> Delete(string id)
     {
-        var category = await _context.Categories.FindAsync(id);
+        var category = await context.Categories.FindAsync(id);
         if (category == null) return false;
         category.IsDeleted = true;
-        _context.Categories.Update(category);
-        await _context.SaveChangesAsync();
+        context.Categories.Update(category);
+        await context.SaveChangesAsync();
         return true;
     }
     
-    public async Task<List<Category?>> GetAll()
+    public async Task<List<Category>> GetAll()
     {
-        return await _context.Categories.ToListAsync();
+        return await context.Categories.ToListAsync();
     }
 }

@@ -1,54 +1,50 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing.Template;
 using StorageAPI.Scripts.Entities;
 using StorageAPI.Scripts.Services;
 
 namespace StorageAPI.Scripts.Controllers;
 
-[Route(template:"api/[controller]")]
+[Route(template: "api/[controller]")]
 [ApiController]
 
-public class CategoryController : ControllerBase
+public class CategoryController(CategoryService categoryService) : ControllerBase
 {
-    private readonly CategoryService _categoryService;
-
-    public CategoryController(CategoryService categoryService)
-    {
-        _categoryService = categoryService;
-    }
-    
-    [HttpGet ("get")] 
+    [HttpGet("get")]
     public async Task<Category?> Get(string id)
     {
-        return await _categoryService.Get(id);
+        return await categoryService.Get(id);
     }
-    
-    [HttpGet ("get-all")]
-    public async Task<List<Category?>> GetAll()
+
+    [HttpGet("get-all")]
+    public async Task<List<Category>> GetAll()
     {
-        return await _categoryService.GetAll();
+        return await categoryService.GetAll();
     }
-    
-    [HttpPost ("add")]
+
+    [HttpPost("add")]
     public async Task<IActionResult> Post(Category? category)
     {
-        var temp = await _categoryService.Add(category);
+        if (category == null) return Ok();
+        var temp = await categoryService.Add(category);
         if (temp == null) return BadRequest();
+
         return Ok();
     }
-    
-    [HttpPut ("update")]
+
+    [HttpPut("update")]
     public async Task<IActionResult> Put(Category? category)
     {
-        var temp = await _categoryService.Update(category);
+        if (category == null) return Ok();
+        var temp = await categoryService.Update(category);
         if (temp == null) return BadRequest();
+
         return Ok();
     }
-    
-    [HttpDelete ("delete")]
+
+    [HttpDelete("delete")]
     public async Task<IActionResult> Delete(string id)
     {
-        var temp = await _categoryService.Delete(id);
+        var temp = await categoryService.Delete(id);
         if (!temp) return BadRequest();
         return Ok();
     }
