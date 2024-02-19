@@ -9,7 +9,7 @@ namespace StorageAPI.Scripts.Controllers;
 [ApiController]
 
 
-public class ClientController
+public class ClientController : ControllerBase
 {
     private readonly ClientService _clientService;
     public ClientController(ClientService clientService)
