@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[8.0.2, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[8.0.2, )"
@@ -69,6 +73,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.7.0, )"
             }
           },
           "imports": [
