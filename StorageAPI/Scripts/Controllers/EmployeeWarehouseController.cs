@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using StorageAPI.Scripts.Entities;
+using StorageAPI.Scripts.Models;
 using StorageAPI.Scripts.Services;
 
 namespace StorageAPI.Scripts.Controllers; 
@@ -14,28 +15,28 @@ public class EmployeeWarehouseController : ControllerBase
         _employeeWarehouseService = employeeWarehouseService;
     }
     [HttpGet("get")]
-    public async Task<EmployeeWarehouse?> Get(int id)
+    public async Task<EmployeeWarehouseModel?> Get(int id)
     {
         return await _employeeWarehouseService.Get(id);
     }
     [HttpGet("get-all")]
-    public async Task<List<EmployeeWarehouse>> GetAll()
+    public async Task<List<EmployeeWarehouseModel>> GetAll()
     {
         return await _employeeWarehouseService.GetAll();
     }
     [HttpPost("add")]
-    public async Task<IActionResult> Post(EmployeeWarehouse? employeeWarehouse)
+    public async Task<IActionResult> Post(EmployeeWarehouseModel? employeeWarehouseModel)
     {
-        if (employeeWarehouse == null) return Ok();
-        var temp = await _employeeWarehouseService.Add(employeeWarehouse);
+        if (employeeWarehouseModel == null) return Ok();
+        var temp = await _employeeWarehouseService.Add(employeeWarehouseModel);
         if (temp == null) return BadRequest();
         return Ok();
     }
     [HttpPut("update")]
-    public async Task<IActionResult> Put(EmployeeWarehouse? employeeWarehouse)
+    public async Task<IActionResult> Put(EmployeeWarehouseModel? employeeWarehouseModel)
     {
-        if (employeeWarehouse == null) return Ok();
-        var temp = await _employeeWarehouseService.Update(employeeWarehouse);
+        if (employeeWarehouseModel == null) return Ok();
+        var temp = await _employeeWarehouseService.Update(employeeWarehouseModel);
         if (temp == null) return BadRequest();
         return Ok();
     }
