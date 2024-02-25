@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using StorageAPI.Scripts.Entities;
+using StorageAPI.Scripts.Models;
 
 namespace StorageAPI.Scripts.Services;
 
@@ -10,22 +11,22 @@ public class EmployeeWarehouseService
     {
         _context = context;
     }
-    public async Task<EmployeeWarehouse?> Get(int id)
+    public async Task<EmployeeWarehouseModel?> Get(int id)
     {
-        return await _context.EmployeeWarehouses.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
+        return await _context.EmployeeWarehousesModel.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
-    public async Task<EmployeeWarehouse?> Add(EmployeeWarehouse employeeWarehouse)
+    public async Task<EmployeeWarehouseModel?> Add(EmployeeWarehouseModel employeeWarehouseModel)
     {
-        employeeWarehouse.IsDeleted = false;
-        await _context.EmployeeWarehouses.AddAsync(employeeWarehouse);
+        employeeWarehouseModel.IsDeleted = false;
+        await _context.EmployeeWarehousesModel.AddAsync(employeeWarehouseModel);
         await _context.SaveChangesAsync();
-        return employeeWarehouse;
+        return employeeWarehouseModel;
     }
-    public async Task<EmployeeWarehouse?> Update(EmployeeWarehouse employeeWarehouse)
+   public async Task<EmployeeWarehouse?> Update(EmployeeWarehouse employeeWarehouse)
     {
         _context.EmployeeWarehouses.Update(employeeWarehouse);
         await _context.SaveChangesAsync();
-        return employeeWarehouse;
+        return EmployeeWarehouseModel;
     }
     public async Task<bool> Delete(int id)
     {
