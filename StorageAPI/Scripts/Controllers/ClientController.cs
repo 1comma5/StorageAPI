@@ -17,7 +17,7 @@ public class ClientController : ControllerBase
         _clientService = clientService;
     }
     [HttpGet("get")]
-    public async Task<Client?> Get(string id)
+    public async Task<Client?> Get(int id)
     {
         return await _clientService.Get(id);
     }
@@ -43,7 +43,7 @@ public class ClientController : ControllerBase
         return Ok();
     }
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<IActionResult> Delete(int id)
     {
         var temp = await _clientService.Delete(id);
         if (!temp) return BadRequest();

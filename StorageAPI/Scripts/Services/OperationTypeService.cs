@@ -9,9 +9,9 @@ public class OperationTypeService
     {
         _context = context;
     }
-    public async Task<OperationType?> Get(string id)
+    public async Task<OperationType?> Get(int id)
     {
-        return await _context.OperationTypes.FindAsync(id);
+        return await _context.OperationTypes.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     public async Task<OperationType?> Add(OperationType operationType)
     {
@@ -26,7 +26,7 @@ public class OperationTypeService
         await _context.SaveChangesAsync();
         return operationType;
     }
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var operationType = await _context.OperationTypes.FindAsync(id);
         if (operationType == null) return false;
@@ -37,6 +37,6 @@ public class OperationTypeService
     }
     public async Task<List<OperationType>> GetAll()
     {
-        return await _context.OperationTypes.ToListAsync();
+        return await _context.OperationTypes.Where(x => !x.IsDeleted).ToListAsync();
     }
 }

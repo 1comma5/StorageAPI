@@ -10,9 +10,9 @@ public class SupplierService
     {
         _context = context;
     }
-    public async Task<Supplier?> Get(string id)
+    public async Task<Supplier?> Get(int id)
     {
-        return await _context.Suppliers.FindAsync(id);
+        return await _context.Suppliers.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     public async Task<Supplier?> Add(Supplier supplier)
     {
@@ -27,7 +27,7 @@ public class SupplierService
         await _context.SaveChangesAsync();
         return supplier;
     }
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var supplier = await _context.Suppliers.FindAsync(id);
         if (supplier == null) return false;
@@ -38,7 +38,7 @@ public class SupplierService
     }
     public async Task<List<Supplier>> GetAll()
     {
-        return await _context.Suppliers.ToListAsync();
+        return await _context.Suppliers.Where(x => !x.IsDeleted).ToListAsync();
     }
     
 }

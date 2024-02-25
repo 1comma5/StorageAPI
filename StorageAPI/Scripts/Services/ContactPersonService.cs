@@ -12,9 +12,9 @@ public class ContactPersonService
         _context = context;
     }
 
-    public async Task<ContactPerson?> Get(string id)
+    public async Task<ContactPerson?> Get(int id)
     {
-        return await _context.ContactPersons.FindAsync(id);
+        return await _context.ContactPersons.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     
     public async Task<ContactPerson?> Add(ContactPerson contactPerson)
@@ -32,7 +32,7 @@ public class ContactPersonService
         return contactPerson;
     }
     
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var contactPerson = await _context.ContactPersons.FindAsync(id);
         if (contactPerson == null) return false;
@@ -44,6 +44,6 @@ public class ContactPersonService
     
     public async Task<List<ContactPerson>> GetAll()
     {
-        return await _context.ContactPersons.ToListAsync();
+        return await _context.ContactPersons.Where(x => !x.IsDeleted).ToListAsync();
     }
 }

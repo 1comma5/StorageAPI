@@ -16,7 +16,7 @@ public class ProductController : ControllerBase
     }
 
     [HttpGet("get")]
-    public async Task<Product?> Get(string id)
+    public async Task<Product?> Get(int id)
     {
         return await _productService.Get(id);
     }
@@ -46,7 +46,7 @@ public class ProductController : ControllerBase
     }
 
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<IActionResult> Delete(int id)
     {
         var temp = await _productService.Delete(id);
         if (!temp) return BadRequest();

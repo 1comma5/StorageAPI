@@ -17,7 +17,7 @@ public class ContactPersonController : ControllerBase
         _contactPersonService = contactPersonService;
     }
     [HttpGet("get")]
-    public async Task<ContactPerson?> Get(string id)
+    public async Task<ContactPerson?> Get(int id)
     {
         return await _contactPersonService.Get(id);
     }
@@ -43,7 +43,7 @@ public class ContactPersonController : ControllerBase
         return Ok();
     }
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<IActionResult> Delete(int id)
     {
         var temp = await _contactPersonService.Delete(id);
         if (!temp) return BadRequest();

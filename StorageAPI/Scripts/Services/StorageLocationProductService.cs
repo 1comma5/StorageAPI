@@ -10,9 +10,9 @@ public class StorageLocationProductService
     {
         _context = context;
     }
-    public async Task<StorageLocationProduct?> Get(string id)
+    public async Task<StorageLocationProduct?> Get(int id)
     {
-        return await _context.StorageLocationProducts.FindAsync(id);
+        return await _context.StorageLocationProducts.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     public async Task<StorageLocationProduct?> Add(StorageLocationProduct storageLocationProduct)
     {
@@ -27,7 +27,7 @@ public class StorageLocationProductService
         await _context.SaveChangesAsync();
         return storageLocationProduct;
     }
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var storageLocationProduct = await _context.StorageLocationProducts.FindAsync(id);
         if (storageLocationProduct == null) return false;
@@ -38,7 +38,7 @@ public class StorageLocationProductService
     }
     public async Task<List<StorageLocationProduct>> GetAll()
     {
-        return await _context.StorageLocationProducts.ToListAsync();
+        return await _context.StorageLocationProducts.Where(x => !x.IsDeleted).ToListAsync();
     }
     
 }

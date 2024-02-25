@@ -10,9 +10,9 @@ public class EmployeeWarehouseService
     {
         _context = context;
     }
-    public async Task<EmployeeWarehouse?> Get(string id)
+    public async Task<EmployeeWarehouse?> Get(int id)
     {
-        return await _context.EmployeeWarehouses.FindAsync(id);
+        return await _context.EmployeeWarehouses.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     public async Task<EmployeeWarehouse?> Add(EmployeeWarehouse employeeWarehouse)
     {
@@ -27,7 +27,7 @@ public class EmployeeWarehouseService
         await _context.SaveChangesAsync();
         return employeeWarehouse;
     }
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var employeeWarehouse = await _context.EmployeeWarehouses.FindAsync(id);
         if (employeeWarehouse == null) return false;
@@ -38,6 +38,6 @@ public class EmployeeWarehouseService
     }
     public async Task<List<EmployeeWarehouse>> GetAll()
     {
-        return await _context.EmployeeWarehouses.ToListAsync();
+        return await _context.EmployeeWarehouses.Where(x => !x.IsDeleted).ToListAsync();
     }
   }

@@ -16,7 +16,7 @@ public class CategoryController : ControllerBase
     }
 
     [HttpGet("get")]
-    public async Task<Category?> Get(string id)
+    public async Task<Category?> Get(int id)
     {
         return await _categoryService.Get(id);
     }
@@ -48,7 +48,7 @@ public class CategoryController : ControllerBase
     }
 
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<IActionResult> Delete(int id)
     {
         var temp = await _categoryService.Delete(id);
         if (!temp) return BadRequest();

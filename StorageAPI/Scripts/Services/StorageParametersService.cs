@@ -11,9 +11,9 @@ public class StorageParametersService
     {
         _context = context;
     }
-    public async Task<StorageParameters?> Get(string id)
+    public async Task<StorageParameters?> Get(int id)
     {
-        return await _context.StorageParametersEnumerable.FindAsync(id);
+        return await _context.StorageParametersEnumerable.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     public async Task<StorageParameters?> Add(StorageParameters storageParameters)
     {
@@ -28,7 +28,7 @@ public class StorageParametersService
         await _context.SaveChangesAsync();
         return storageParameters;
     }
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var storageParameters = await _context.StorageParametersEnumerable.FindAsync(id);
         if (storageParameters == null) return false;
@@ -39,7 +39,7 @@ public class StorageParametersService
     }
     public async Task<List<StorageParameters>> GetAll()
     {
-        return await _context.StorageParametersEnumerable.ToListAsync();
+        return await _context.StorageParametersEnumerable.Where(x => !x.IsDeleted).ToListAsync();
     }
     
 }

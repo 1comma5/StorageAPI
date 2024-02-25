@@ -15,7 +15,7 @@ public class ProductCostController : ControllerBase
         _productCostService = productCostService;
     }
     [HttpGet("get")]
-    public async Task<ProductCost?> Get(string id)
+    public async Task<ProductCost?> Get(int id)
     {
         return await _productCostService.Get(id);
     }
@@ -41,7 +41,7 @@ public class ProductCostController : ControllerBase
         return Ok();
     }
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<IActionResult> Delete(int id)
     {
         var temp = await _productCostService.Delete(id);
         if (!temp) return BadRequest();

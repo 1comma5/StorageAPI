@@ -14,7 +14,7 @@ public class StorageLocationController : ControllerBase
         _storageLocationService = storageLocationService;
     }
     [HttpGet("get")]
-    public async Task<StorageLocation?> Get(string id)
+    public async Task<StorageLocation?> Get(int id)
     {
         return await _storageLocationService.Get(id);
     }
@@ -40,7 +40,7 @@ public class StorageLocationController : ControllerBase
         return Ok();
     }
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<IActionResult> Delete(int id)
     {
         var temp = await _storageLocationService.Delete(id);
         if (!temp) return BadRequest();

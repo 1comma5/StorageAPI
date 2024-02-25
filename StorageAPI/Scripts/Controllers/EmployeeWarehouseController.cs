@@ -14,7 +14,7 @@ public class EmployeeWarehouseController : ControllerBase
         _employeeWarehouseService = employeeWarehouseService;
     }
     [HttpGet("get")]
-    public async Task<EmployeeWarehouse?> Get(string id)
+    public async Task<EmployeeWarehouse?> Get(int id)
     {
         return await _employeeWarehouseService.Get(id);
     }
@@ -40,7 +40,7 @@ public class EmployeeWarehouseController : ControllerBase
         return Ok();
     }
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<IActionResult> Delete(int id)
     {
         var temp = await _employeeWarehouseService.Delete(id);
         if (!temp) return BadRequest();

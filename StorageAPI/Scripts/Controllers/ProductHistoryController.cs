@@ -13,7 +13,7 @@ public class ProductHistoryController : ControllerBase
         _productHistoryService = productHistoryService;
     }
     [HttpGet("get")]
-    public async Task<ProductHistory?> Get(string id)
+    public async Task<ProductHistory?> Get(int id)
     {
         return await _productHistoryService.Get(id);
     }
@@ -39,7 +39,7 @@ public class ProductHistoryController : ControllerBase
         return Ok();
     }
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<IActionResult> Delete(int id)
     {
         var temp = await _productHistoryService.Delete(id);
         if (!temp) return BadRequest();

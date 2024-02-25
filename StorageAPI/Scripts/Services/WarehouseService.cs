@@ -11,9 +11,9 @@ public class WarehouseService
     {
         _context = context;
     }
-    public async Task<Warehouse?> Get(string id)
+    public async Task<Warehouse?> Get(int id)
     {
-        return await _context.Warehouses.FindAsync(id);
+        return await _context.Warehouses.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     public async Task<Warehouse?> Add(Warehouse warehouse)
     {
@@ -28,7 +28,7 @@ public class WarehouseService
         await _context.SaveChangesAsync();
         return warehouse;
     }
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var warehouse = await _context.Warehouses.FindAsync(id);
         if (warehouse == null) return false;
@@ -39,7 +39,7 @@ public class WarehouseService
     }
     public async Task<List<Warehouse>> GetAll()
     {
-        return await _context.Warehouses.ToListAsync();
+        return await _context.Warehouses.Where(x => !x.IsDeleted).ToListAsync();
     }
     
 }

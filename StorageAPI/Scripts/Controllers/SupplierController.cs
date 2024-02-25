@@ -15,7 +15,7 @@ public class SupplierController : ControllerBase
         _supplierService = supplierService;
     }
     [HttpGet("get")]
-    public async Task<Supplier?> Get(string id)
+    public async Task<Supplier?> Get(int id)
     {
         return await _supplierService.Get(id);
     }
@@ -41,7 +41,7 @@ public class SupplierController : ControllerBase
         return Ok();
     }
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<IActionResult> Delete(int id)
     {
         var temp = await _supplierService.Delete(id);
         if (!temp) return BadRequest();

@@ -11,9 +11,9 @@ public class CategoryService
         _context = context;
     }
 
-    public async Task<Category?> Get(string id)
+    public async Task<Category?> Get(int id)
     {
-        return await _context.Categories.FindAsync(id);
+        return await _context.Categories.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     
     public async Task<Category?> Add(Category category)
@@ -31,7 +31,7 @@ public class CategoryService
         return category;
     }
     
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var category = await _context.Categories.FindAsync(id);
         if (category == null) return false;
@@ -43,6 +43,6 @@ public class CategoryService
     
     public async Task<List<Category>> GetAll()
     {
-        return await _context.Categories.ToListAsync();
+        return await _context.Categories.Where(x => !x.IsDeleted).ToListAsync();
     }
 }

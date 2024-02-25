@@ -12,9 +12,9 @@ public class OrderStatusService
         _context = context;
     }
     
-    public async Task<OrderStatus?> Get(string id)
+    public async Task<OrderStatus?> Get(int id)
     {
-        return await _context.OrderStatusEnumerable.FindAsync(id);
+        return await _context.OrderStatusEnumerable.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     
     public async Task<OrderStatus?> Add(OrderStatus orderStatus)
@@ -32,7 +32,7 @@ public class OrderStatusService
         return orderStatus;
     }
     
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var orderStatus = await _context.OrderStatusEnumerable.FindAsync(id);
         if (orderStatus == null) return false;
@@ -44,6 +44,6 @@ public class OrderStatusService
     
     public async Task<List<OrderStatus>> GetAll()
     {
-        return await _context.OrderStatusEnumerable.ToListAsync();
+        return await _context.OrderStatusEnumerable.Where(x => !x.IsDeleted).ToListAsync();
     }
 }

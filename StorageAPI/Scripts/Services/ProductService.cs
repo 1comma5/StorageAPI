@@ -12,9 +12,9 @@ public class ProductService
         _context = context;
     }
     
-    public async Task<Product?> Get(string id)
+    public async Task<Product?> Get(int id)
     {
-        return await _context.Products.FindAsync(id);
+        return await _context.Products.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     public async Task<Product?> Add(Product product)
     {
@@ -29,7 +29,7 @@ public class ProductService
         await _context.SaveChangesAsync();
         return product;
     }
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var product = await _context.Products.FindAsync(id);
         if (product == null) return false;
@@ -40,6 +40,6 @@ public class ProductService
     }
     public async Task<List<Product>> GetAll()
     {
-        return await _context.Products.ToListAsync();
+        return await _context.Products.Where(x => !x.IsDeleted).ToListAsync();
     }
 }

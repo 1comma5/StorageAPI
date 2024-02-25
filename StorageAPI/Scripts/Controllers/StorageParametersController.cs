@@ -15,7 +15,7 @@ public class StorageParametersController : ControllerBase
         _storageParametersService = storageParametersService;
     }
     [HttpGet("get")]
-    public async Task<StorageParameters?> Get(string id)
+    public async Task<StorageParameters?> Get(int id)
     {
         return await _storageParametersService.Get(id);
     }
@@ -41,7 +41,7 @@ public class StorageParametersController : ControllerBase
         return Ok();
     }
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<IActionResult> Delete(int id)
     {
         var temp = await _storageParametersService.Delete(id);
         if (!temp) return BadRequest();

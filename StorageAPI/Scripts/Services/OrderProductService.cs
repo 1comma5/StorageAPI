@@ -9,9 +9,9 @@ public class OrderProductService
     {
         _context = context;
     }
-    public async Task<OrderProduct?> Get(string id)
+    public async Task<OrderProduct?> Get(int id)
     {
-        return await _context.OrderProducts.FindAsync(id);
+        return await _context.OrderProducts.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     public async Task<OrderProduct?> Add(OrderProduct orderProduct)
     {
@@ -26,7 +26,7 @@ public class OrderProductService
         await _context.SaveChangesAsync();
         return orderProduct;
     }
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var orderProduct = await _context.OrderProducts.FindAsync(id);
         if (orderProduct == null) return false;
@@ -37,6 +37,6 @@ public class OrderProductService
     }
     public async Task<List<OrderProduct>> GetAll()
     {
-        return await _context.OrderProducts.ToListAsync();
+        return await _context.OrderProducts.Where(x => !x.IsDeleted).ToListAsync();
     }
 }

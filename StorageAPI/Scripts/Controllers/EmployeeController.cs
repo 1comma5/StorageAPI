@@ -15,7 +15,7 @@ public class EmployeeController : ControllerBase
         _employeeService = employeeService;
     }
     [HttpGet("get")]
-    public async Task<Employee?> Get(string id)
+    public async Task<Employee?> Get(int id)
     {
         return await _employeeService.Get(id);
     }
@@ -41,7 +41,7 @@ public class EmployeeController : ControllerBase
         return Ok();
     }
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<IActionResult> Delete(int id)
     {
         var temp = await _employeeService.Delete(id);
         if (!temp) return BadRequest();

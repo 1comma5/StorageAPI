@@ -17,7 +17,7 @@ public class OperationTypeController : ControllerBase
     }
 
     [HttpGet("get")]
-    public async Task<OperationType?> Get(string id)
+    public async Task<OperationType?> Get(int id)
     {
         return await _operationTypeService.Get(id);
     }
@@ -47,7 +47,7 @@ public class OperationTypeController : ControllerBase
     }
 
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<IActionResult> Delete(int id)
     {
         var temp = await _operationTypeService.Delete(id);
         if (!temp) return BadRequest();

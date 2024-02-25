@@ -15,7 +15,7 @@ public class ManufacturerController : ControllerBase
         _manufacturerService = manufacturerService;
     }
     [HttpGet("get")]
-    public async Task<Manufacturer?> Get(string id)
+    public async Task<Manufacturer?> Get(int id)
     {
         return await _manufacturerService.Get(id);
     }
@@ -41,7 +41,7 @@ public class ManufacturerController : ControllerBase
         return Ok();
     }
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<IActionResult> Delete(int id)
     {
         var temp = await _manufacturerService.Delete(id);
         if (!temp) return BadRequest();

@@ -10,9 +10,9 @@ public class ProductCostService
    {
        _context = context;
    }
-   public async Task<ProductCost?> Get(string id)
+   public async Task<ProductCost?> Get(int id)
    {
-       return await _context.ProductCosts.FindAsync(id);
+       return await _context.ProductCosts.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
    }
    public async Task<ProductCost?> Add(ProductCost productCost)
    {
@@ -27,7 +27,7 @@ public class ProductCostService
        await _context.SaveChangesAsync();
        return productCost;
    }
-   public async Task<bool> Delete(string id)
+   public async Task<bool> Delete(int id)
    {
        var productCost = await _context.ProductCosts.FindAsync(id);
        if (productCost == null) return false;
@@ -38,7 +38,7 @@ public class ProductCostService
    }
    public async Task<List<ProductCost>> GetAll()
    {
-       return await _context.ProductCosts.ToListAsync();
+       return await _context.ProductCosts.Where(x => !x.IsDeleted).ToListAsync();
    }
    
 }

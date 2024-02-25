@@ -12,9 +12,9 @@ public class EmployeeService
         _context = context;
     }
 
-    public async Task<Employee?> Get(string id)
+    public async Task<Employee?> Get(int id)
     {
-        return await _context.Employees.FindAsync(id);
+        return await _context.Employees.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     
     public async Task<Employee?> Add(Employee employee)
@@ -32,7 +32,7 @@ public class EmployeeService
         return employee;
     }
     
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var employee = await _context.Employees.FindAsync(id);
         if (employee == null) return false;
@@ -44,6 +44,6 @@ public class EmployeeService
     
     public async Task<List<Employee>> GetAll()
     {
-        return await _context.Employees.ToListAsync();
+        return await _context.Employees.Where(x => !x.IsDeleted).ToListAsync();
     }
 }

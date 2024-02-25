@@ -14,7 +14,7 @@ public class OrderController : ControllerBase
         _orderService = orderService;
     }
     [HttpGet("get")]
-    public async Task<Order?> Get(string id)
+    public async Task<Order?> Get(int id)
     {
         return await _orderService.Get(id);
     }
@@ -40,7 +40,7 @@ public class OrderController : ControllerBase
         return Ok();
     }
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<IActionResult> Delete(int id)
     {
         var temp = await _orderService.Delete(id);
         if (!temp) return BadRequest();

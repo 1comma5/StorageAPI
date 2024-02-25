@@ -10,9 +10,9 @@ public class ProductHistoryService
     {
         _context = context;
     }
-    public async Task<ProductHistory?> Get(string id)
+    public async Task<ProductHistory?> Get(int id)
     {
-        return await _context.ProductHistories.FindAsync(id);
+        return await _context.ProductHistories.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     public async Task<ProductHistory?> Add(ProductHistory productHistory)
     {
@@ -27,7 +27,7 @@ public class ProductHistoryService
         await _context.SaveChangesAsync();
         return productHistory;
     }
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var productHistory = await _context.ProductHistories.FindAsync(id);
         if (productHistory == null) return false;
@@ -38,6 +38,6 @@ public class ProductHistoryService
     }
     public async Task<List<ProductHistory>> GetAll()
     {
-        return await _context.ProductHistories.ToListAsync();
+        return await _context.ProductHistories.Where(x => !x.IsDeleted).ToListAsync();
     }
 }

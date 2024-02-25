@@ -16,7 +16,7 @@ public class UnitOfMeasureController : ControllerBase
     }
     
     [HttpGet("get")]
-    public async Task<UnitOfMeasure?> Get(string id)
+    public async Task<UnitOfMeasure?> Get(int id)
     {
         return await _unitOfMeasureService.Get(id);
     }
@@ -42,7 +42,7 @@ public class UnitOfMeasureController : ControllerBase
         return Ok();
     }
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete(string id)
+    public async Task<IActionResult> Delete(int id)
     {
         var temp = await _unitOfMeasureService.Delete(id);
         if (!temp) return BadRequest();

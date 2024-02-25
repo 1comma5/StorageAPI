@@ -11,9 +11,9 @@ public class UnitOfMeasureService
     {
         _context = context;
     }
-    public async Task<UnitOfMeasure?> Get(string id)
+    public async Task<UnitOfMeasure?> Get(int id)
     {
-        return await _context.UnitOfMeasures.FindAsync(id);
+        return await _context.UnitOfMeasures.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     public async Task<UnitOfMeasure?> Add(UnitOfMeasure unitOfMeasure)
     {
@@ -28,7 +28,7 @@ public class UnitOfMeasureService
         await _context.SaveChangesAsync();
         return unitOfMeasure;
     }
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var unitOfMeasure = await _context.UnitOfMeasures.FindAsync(id);
         if (unitOfMeasure == null) return false;
@@ -39,7 +39,7 @@ public class UnitOfMeasureService
     }
     public async Task<List<UnitOfMeasure>> GetAll()
     {
-        return await _context.UnitOfMeasures.ToListAsync();
+        return await _context.UnitOfMeasures.Where(x => !x.IsDeleted).ToListAsync();
     }
     
 }

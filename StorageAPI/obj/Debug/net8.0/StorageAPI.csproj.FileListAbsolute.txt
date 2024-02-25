@@ -254,3 +254,9 @@ C:\Users\1\Documents\GitHub\StorageAPI\StorageAPI\obj\Debug\net8.0\refint\Storag
 C:\Users\1\Documents\GitHub\StorageAPI\StorageAPI\obj\Debug\net8.0\StorageAPI.pdb
 C:\Users\1\Documents\GitHub\StorageAPI\StorageAPI\obj\Debug\net8.0\StorageAPI.genruntimeconfig.cache
 C:\Users\1\Documents\GitHub\StorageAPI\StorageAPI\obj\Debug\net8.0\ref\StorageAPI.dll
+C:\Users\1\Documents\GitHub\StorageAPI\StorageAPI\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\1\Documents\GitHub\StorageAPI\StorageAPI\bin\Debug\net8.0\Moq.dll
+C:\Users\1\Documents\GitHub\StorageAPI\StorageAPI\bin\Debug\net8.0\xunit.abstractions.dll
+C:\Users\1\Documents\GitHub\StorageAPI\StorageAPI\bin\Debug\net8.0\xunit.assert.dll
+C:\Users\1\Documents\GitHub\StorageAPI\StorageAPI\bin\Debug\net8.0\xunit.core.dll
+C:\Users\1\Documents\GitHub\StorageAPI\StorageAPI\bin\Debug\net8.0\xunit.execution.dotnet.dll

@@ -11,9 +11,9 @@ public class ClientService
         _context = context;
     }
 
-    public async Task<Client?> Get(string id)
+    public async Task<Client?> Get(int id)
     {
-        return await _context.Clients.FindAsync(id);
+        return await _context.Clients.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     
     public async Task<Client?> Add(Client client)
@@ -31,7 +31,7 @@ public class ClientService
         return client;
     }
     
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var client = await _context.Clients.FindAsync(id);
         if (client == null) return false;
@@ -43,6 +43,6 @@ public class ClientService
     
     public async Task<List<Client>> GetAll()
     {
-        return await _context.Clients.ToListAsync();
+        return await _context.Clients.Where(x => !x.IsDeleted).ToListAsync();
     }
 }

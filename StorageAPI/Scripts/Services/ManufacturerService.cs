@@ -12,9 +12,9 @@ public class ManufacturerService
         _context = context;
     }
 
-    public async Task<Manufacturer?> Get(string id)
+    public async Task<Manufacturer?> Get(int id)
     {
-        return await _context.Manufacturers.FindAsync(id);
+        return await _context.Manufacturers.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
     }
     
     public async Task<Manufacturer?> Add(Manufacturer manufacturer)
@@ -32,7 +32,7 @@ public class ManufacturerService
         return manufacturer;
     }
     
-    public async Task<bool> Delete(string id)
+    public async Task<bool> Delete(int id)
     {
         var manufacturer = await _context.Manufacturers.FindAsync(id);
         if (manufacturer == null) return false;
@@ -44,6 +44,6 @@ public class ManufacturerService
     
     public async Task<List<Manufacturer>> GetAll()
     {
-        return await _context.Manufacturers.ToListAsync();
+        return await _context.Manufacturers.Where(x => !x.IsDeleted).ToListAsync();
     }
 }
