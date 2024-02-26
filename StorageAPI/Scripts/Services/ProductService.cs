@@ -1,5 +1,6 @@
 using StorageAPI.Scripts.Entities;
 using Microsoft.EntityFrameworkCore;
+using StorageAPI.Scripts.Models;
 
 namespace StorageAPI.Scripts.Services;
 
@@ -12,34 +13,26 @@ public class ProductService
         _context = context;
     }
     
-    public async Task<Product?> Get(int id)
+    public async Task<ProductModel?> Get(int id)
     {
-        return await _context.Products.FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
+        var product = await _context.Products
+            .Include(x => x.Manufacturer)
+            .Include()
+    
+    public async Task<ProductModel?> Add(ProductModel productModel)
+    {
+        
     }
-    public async Task<Product?> Add(Product product)
+    public async Task<ProductModel?> Update(ProductModel productModel)
     {
-        product.IsDeleted = false;
-        await _context.Products.AddAsync(product);
-        await _context.SaveChangesAsync();
-        return product;
-    }
-    public async Task<Product?> Update(Product product)
-    {
-        _context.Products.Update(product);
-        await _context.SaveChangesAsync();
-        return product;
+        
     }
     public async Task<bool> Delete(int id)
     {
-        var product = await _context.Products.FindAsync(id);
-        if (product == null) return false;
-        product.IsDeleted = true;
-        _context.Products.Update(product);
-        await _context.SaveChangesAsync();
-        return true;
+        
     }
-    public async Task<List<Product>> GetAll()
+    public async Task<List<ProductModel>> GetAll()
     {
-        return await _context.Products.Where(x => !x.IsDeleted).ToListAsync();
+        
     }
 }
