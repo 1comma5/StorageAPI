@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using StorageAPI.Scripts.Entities;
+using StorageAPI.Scripts.Models;
 using StorageAPI.Scripts.Services;
 
 namespace StorageAPI.Scripts.Controllers;
@@ -15,28 +16,28 @@ public class ProductCostController : ControllerBase
         _productCostService = productCostService;
     }
     [HttpGet("get")]
-    public async Task<ProductCost?> Get(int id)
+    public async Task<ProductCostModel?> Get(int id)
     {
         return await _productCostService.Get(id);
     }
     [HttpGet("get-all")]
-    public async Task<List<ProductCost>> GetAll()
+    public async Task<List<ProductCostModel>> GetAll()
     {
         return await _productCostService.GetAll();
     }
     [HttpPost("add")]
-    public async Task<IActionResult> Post(ProductCost? productCost)
+    public async Task<IActionResult> Post(ProductCostModel? productCostModel)
     {
-        if (productCost == null) return Ok();
-        var temp = await _productCostService.Add(productCost);
+        if (productCostModel == null) return Ok();
+        var temp = await _productCostService.Add(productCostModel);
         if (temp == null) return BadRequest();
         return Ok();
     }
     [HttpPut("update")]
-    public async Task<IActionResult> Put(ProductCost? productCost)
+    public async Task<IActionResult> Put(ProductCostModel? productCostModel)
     {
-        if (productCost == null) return Ok();
-        var temp = await _productCostService.Update(productCost);
+        if (productCostModel == null) return Ok();
+        var temp = await _productCostService.Update(productCostModel);
         if (temp == null) return BadRequest();
         return Ok();
     }

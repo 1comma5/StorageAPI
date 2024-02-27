@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using StorageAPI.Scripts.Services;
 using StorageAPI.Scripts.Entities;
+using StorageAPI.Scripts.Models;
 
 namespace StorageAPI.Scripts.Controllers;
 [Route(template: "api/[controller]")]
@@ -14,17 +15,17 @@ public class OrderController : ControllerBase
         _orderService = orderService;
     }
     [HttpGet("get")]
-    public async Task<Order?> Get(int id)
+    public async Task<OrderModel?> Get(int id)
     {
         return await _orderService.Get(id);
     }
     [HttpGet("get-all")]
-    public async Task<List<Order>> GetAll()
+    public async Task<List<OrderModel>> GetAll()
     {
         return await _orderService.GetAll();
     }
     [HttpPost("add")]
-    public async Task<IActionResult> Post(Order? order)
+    public async Task<IActionResult> Post(OrderModel? order)
     {
         if (order == null) return Ok();
         var temp = await _orderService.Add(order);
@@ -32,7 +33,7 @@ public class OrderController : ControllerBase
         return Ok();
     }
     [HttpPut("update")]
-    public async Task<IActionResult> Put(Order? order)
+    public async Task<IActionResult> Put(OrderModel? order)
     {
         if (order == null) return Ok();
         var temp = await _orderService.Update(order);

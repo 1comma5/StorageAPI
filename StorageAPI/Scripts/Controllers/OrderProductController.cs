@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using StorageAPI.Scripts.Services;
 using StorageAPI.Scripts.Entities;
+using StorageAPI.Scripts.Models;
 
 namespace StorageAPI.Scripts.Controllers;
 [Route(template: "api/[controller]")]
@@ -14,28 +15,28 @@ public class OrderProductController : ControllerBase
         _orderProductService = orderProductService;
     }
     [HttpGet("get")]
-    public async Task<OrderProduct?> Get(int id)
+    public async Task<OrderProductModel?> Get(int id)
     {
         return await _orderProductService.Get(id);
     }
     [HttpGet("get-all")]
-    public async Task<List<OrderProduct>> GetAll()
+    public async Task<List<OrderProductModel>> GetAll()
     {
         return await _orderProductService.GetAll();
     }
     [HttpPost("add")]
-    public async Task<IActionResult> Post(OrderProduct? orderProduct)
+    public async Task<IActionResult> Post(OrderProductModel? orderProductModel)
     {
-        if (orderProduct == null) return Ok();
-        var temp = await _orderProductService.Add(orderProduct);
+        if (orderProductModel == null) return Ok();
+        var temp = await _orderProductService.Add(orderProductModel);
         if (temp == null) return BadRequest();
         return Ok();
     }
     [HttpPut("update")]
-    public async Task<IActionResult> Put(OrderProduct? orderProduct)
+    public async Task<IActionResult> Put(OrderProductModel? orderProductModel)
     {
-        if (orderProduct == null) return Ok();
-        var temp = await _orderProductService.Update(orderProduct);
+        if (orderProductModel == null) return Ok();
+        var temp = await _orderProductService.Update(orderProductModel);
         if (temp == null) return BadRequest();
         return Ok();
     }

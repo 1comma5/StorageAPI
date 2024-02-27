@@ -10,8 +10,8 @@ public class Product
     public bool IsDeleted { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
-    public string ArticleCode { get; set; }
-    public string AdditionalNumber { get; set; }
+    public int ArticleCode { get; set; }
+    public int AdditionalNumber { get; set; }
 
     [ForeignKey("ManufacturerId")]
     public Manufacturer Manufacturer { get; set; }

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using StorageAPI.Scripts.Services;
 using StorageAPI.Scripts.Entities;
+using StorageAPI.Scripts.Models;
 
 namespace StorageAPI.Scripts.Controllers;
 [Route(template: "api/[controller]")]
@@ -16,28 +17,28 @@ public class ProductController : ControllerBase
     }
 
     [HttpGet("get")]
-    public async Task<Product?> Get(int id)
+    public async Task<ProductModel?> Get(int id)
     {
         return await _productService.Get(id);
     }
 
     [HttpGet("get-all")]
-    public async Task<List<Product>> GetAll()
+    public async Task<List<ProductModel>> GetAll()
     {
         return await _productService.GetAll();
     }
 
     [HttpPost("add")]
-    public async Task<IActionResult> Post(Product? product)
+    public async Task<IActionResult> Post(ProductModel? productModel)
     {
-        if (product == null) return Ok();
-        var temp = await _productService.Add(product);
+        if (productModel == null) return Ok();
+        var temp = await _productService.Add(productModel);
         if (temp == null) return BadRequest();
         return Ok();
     }
 
     [HttpPut("update")]
-    public async Task<IActionResult> Put(Product? product)
+    public async Task<IActionResult> Put(ProductModel? product)
     {
         if (product == null) return Ok();
         var temp = await _productService.Update(product);
