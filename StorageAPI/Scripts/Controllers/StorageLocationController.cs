@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using StorageAPI.Scripts.Services;
 using StorageAPI.Scripts.Entities;
+using StorageAPI.Scripts.Models;
 
 namespace StorageAPI.Scripts.Controllers;
 [Route(template: "api/[controller]")]
@@ -14,28 +15,28 @@ public class StorageLocationController : ControllerBase
         _storageLocationService = storageLocationService;
     }
     [HttpGet("get")]
-    public async Task<StorageLocation?> Get(int id)
+    public async Task<StorageLocationModel?> Get(int id)
     {
         return await _storageLocationService.Get(id);
     }
     [HttpGet("get-all")]
-    public async Task<List<StorageLocation>> GetAll()
+    public async Task<List<StorageLocationModel>> GetAll()
     {
         return await _storageLocationService.GetAll();
     }
     [HttpPost("add")]
-    public async Task<IActionResult> Post(StorageLocation? storageLocation)
+    public async Task<IActionResult> Post(StorageLocationModel? storageLocationModel)
     {
-        if (storageLocation == null) return Ok();
-        var temp = await _storageLocationService.Add(storageLocation);
+        if (storageLocationModel == null) return Ok();
+        var temp = await _storageLocationService.Add(storageLocationModel);
         if (temp == null) return BadRequest();
         return Ok();
     }
     [HttpPut("update")]
-    public async Task<IActionResult> Put(StorageLocation? storageLocation)
+    public async Task<IActionResult> Put(StorageLocationModel? storageLocationModel)
     {
-        if (storageLocation == null) return Ok();
-        var temp = await _storageLocationService.Update(storageLocation);
+        if (storageLocationModel == null) return Ok();
+        var temp = await _storageLocationService.Update(storageLocationModel);
         if (temp == null) return BadRequest();
         return Ok();
     }

@@ -47,7 +47,7 @@ public class ProductCostService
            productCost.ModificationDate);
    
 }
-   public async Task<ProductCostModel?> Update(ProductCost productCostModel)
+   public async Task<ProductCostModel?> Update(ProductCostModel productCostModel)
    {
        var productCost = await _context.ProductCosts
            .Include(x => x.Product)

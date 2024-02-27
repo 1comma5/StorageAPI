@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using StorageAPI.Scripts.Entities;
+using StorageAPI.Scripts.Models;
 using StorageAPI.Scripts.Services;
 
 namespace StorageAPI.Scripts.Controllers;
@@ -13,28 +14,28 @@ public class ProductHistoryController : ControllerBase
         _productHistoryService = productHistoryService;
     }
     [HttpGet("get")]
-    public async Task<ProductHistory?> Get(int id)
+    public async Task<ProductHistoryModel?> Get(int id)
     {
         return await _productHistoryService.Get(id);
     }
     [HttpGet("get-all")]
-    public async Task<List<ProductHistory>> GetAll()
+    public async Task<List<ProductHistoryModel>> GetAll()
     {
         return await _productHistoryService.GetAll();
     }
     [HttpPost("add")]
-    public async Task<IActionResult> Post(ProductHistory? productHistory)
+    public async Task<IActionResult> Post(ProductHistoryModel? productHistoryModel)
     {
-        if (productHistory == null) return Ok();
-        var temp = await _productHistoryService.Add(productHistory);
+        if (productHistoryModel == null) return Ok();
+        var temp = await _productHistoryService.Add(productHistoryModel);
         if (temp == null) return BadRequest();
         return Ok();
     }
     [HttpPut("update")]
-    public async Task<IActionResult> Put(ProductHistory? productHistory)
+    public async Task<IActionResult> Put(ProductHistoryModel? productHistoryModel)
     {
-        if (productHistory == null) return Ok();
-        var temp = await _productHistoryService.Update(productHistory);
+        if (productHistoryModel == null) return Ok();
+        var temp = await _productHistoryService.Update(productHistoryModel);
         if (temp == null) return BadRequest();
         return Ok();
     }
