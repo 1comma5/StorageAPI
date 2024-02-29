@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using StorageAPI.Scripts.Entities;
+using StorageAPI.Scripts.Models;
 using StorageAPI.Scripts.Services;
 
 namespace StorageAPI.Scripts.Controllers;
@@ -15,28 +16,28 @@ public class SupplierController : ControllerBase
         _supplierService = supplierService;
     }
     [HttpGet("get")]
-    public async Task<Supplier?> Get(int id)
+    public async Task<SupplierModel?> Get(int id)
     {
         return await _supplierService.Get(id);
     }
     [HttpGet("get-all")]
-    public async Task<List<Supplier>> GetAll()
+    public async Task<List<SupplierModel>> GetAll()
     {
         return await _supplierService.GetAll();
     }
     [HttpPost("add")]
-    public async Task<IActionResult> Post(Supplier? supplier)
+    public async Task<IActionResult> Post(SupplierModel? supplierModel)
     {
-        if (supplier == null) return Ok();
-        var temp = await _supplierService.Add(supplier);
+        if (supplierModel == null) return Ok();
+        var temp = await _supplierService.Add(supplierModel);
         if (temp == null) return BadRequest();
         return Ok();
     }
     [HttpPut("update")]
-    public async Task<IActionResult> Put(Supplier? supplier)
+    public async Task<IActionResult> Put(SupplierModel? supplierModel)
     {
-        if (supplier == null) return Ok();
-        var temp = await _supplierService.Update(supplier);
+        if (supplierModel == null) return Ok();
+        var temp = await _supplierService.Update(supplierModel);
         if (temp == null) return BadRequest();
         return Ok();
     }

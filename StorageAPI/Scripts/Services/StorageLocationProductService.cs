@@ -65,37 +65,34 @@ public class StorageLocationProductService
 
     public async Task<StorageLocationProductModel?> Update(StorageLocationProductModel storageLocationProductModel)
     {
+        var storageLocationProduct = await _context.StorageLocationProducts
+            .Include(x => x.Product)
+            .Include(x => x.StorageLocation)
+            .Include(x => x.Supplier)
+            .FirstOrDefaultAsync(x => x.Id == storageLocationProductModel.Id && !x.IsDeleted);
+        if (storageLocationProduct == null) return null;
         var product = await _context.Products.FindAsync(storageLocationProductModel.ProductId);
         var storageLocation = await _context.StorageLocations.FindAsync(storageLocationProductModel.StorageLocationId);
         var supplier = await _context.Suppliers.FindAsync(storageLocationProductModel.SupplierId);
+       
+        if (product != null) storageLocationProduct.Product = product;
+        if (storageLocation != null) storageLocationProduct.StorageLocation = storageLocation;
+        if (supplier != null) storageLocationProduct.Supplier = supplier;
         
-        if (product == null || storageLocation == null || supplier == null) return null;
-        
-        var storageLocationProduct = new StorageLocationProduct
-        {
-            Product = product,
-            StorageLocation = storageLocation,
-            Supplier = supplier,
-            Quantity = storageLocationProductModel.Quantity,
-            ArrivalDate = storageLocationProductModel.ArrivalDate,
-            ProductionDate = storageLocationProductModel.ProductionDate,
-            ExpirationDate = storageLocationProductModel.ExpirationDate
-        };
-        
-        await _context.StorageLocationProducts.AddAsync(storageLocationProduct);
+        _context.StorageLocationProducts.Update(storageLocationProduct);
         await _context.SaveChangesAsync();
         return new StorageLocationProductModel(
             storageLocationProduct.Id,
-            storageLocationProduct.ProductId,
-            storageLocationProduct.StorageLocationId,
+            storageLocationProduct.Product.Id,
+            storageLocationProduct.StorageLocation.Id,
             storageLocationProduct.Quantity,
             storageLocationProduct.ArrivalDate,
             storageLocationProduct.ProductionDate,
             storageLocationProduct.ExpirationDate,
-            storageLocationProduct.SupplierId
+            storageLocationProduct.Supplier.Id
         );
     }
-    
+
     public async Task<bool> Delete(int id)
     {
         var storageLocationProduct = await _context.StorageLocationProducts.FindAsync();
