@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace StorageAPI.Scripts.Models;
 
 public class ProductCostModel
@@ -7,6 +9,7 @@ public class ProductCostModel
     public int Cost { get; set; }
     public DateTime ModificationDate { get; set; }
     
+    [JsonConstructor]
     public ProductCostModel(int id, int productId, int cost, DateTime modificationDate)
     {
         Id = id;

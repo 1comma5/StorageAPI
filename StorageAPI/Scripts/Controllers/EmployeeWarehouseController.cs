@@ -35,7 +35,7 @@ public class EmployeeWarehouseController : ControllerBase
     [HttpPut("update")]
     public async Task<IActionResult> Put(EmployeeWarehouseModel? employeeWarehouseModel)
     {
-        if (employeeWarehouseModel == null) return Ok();
+        if (employeeWarehouseModel == null) return BadRequest();
         var temp = await _employeeWarehouseService.Update(employeeWarehouseModel);
         if (temp == null) return BadRequest();
         return Ok();

@@ -27,7 +27,7 @@ public class StorageLocationController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(StorageLocationModel? storageLocationModel)
     {
-        if (storageLocationModel == null) return Ok();
+        if (storageLocationModel == null) return BadRequest();
         var temp = await _storageLocationService.Add(storageLocationModel);
         if (temp == null) return BadRequest();
         return Ok();
@@ -35,7 +35,7 @@ public class StorageLocationController : ControllerBase
     [HttpPut("update")]
     public async Task<IActionResult> Put(StorageLocationModel? storageLocationModel)
     {
-        if (storageLocationModel == null) return Ok();
+        if (storageLocationModel == null) return BadRequest();
         var temp = await _storageLocationService.Update(storageLocationModel);
         if (temp == null) return BadRequest();
         return Ok();

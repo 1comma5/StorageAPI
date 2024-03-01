@@ -28,7 +28,7 @@ public class UnitOfMeasureController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(UnitOfMeasure? unitOfMeasure)
     {
-        if (unitOfMeasure == null) return Ok();
+        if (unitOfMeasure == null) return BadRequest();
         var temp = await _unitOfMeasureService.Add(unitOfMeasure);
         if (temp == null) return BadRequest();
         return Ok();
@@ -36,7 +36,7 @@ public class UnitOfMeasureController : ControllerBase
     [HttpPut("update")]
     public async Task<IActionResult> Put(UnitOfMeasure? unitOfMeasure)
     {
-        if (unitOfMeasure == null) return Ok();
+        if (unitOfMeasure == null) return BadRequest();
         var temp = await _unitOfMeasureService.Update(unitOfMeasure);
         if (temp == null) return BadRequest();
         return Ok();

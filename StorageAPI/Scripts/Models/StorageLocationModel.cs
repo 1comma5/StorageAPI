@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace StorageAPI.Scripts.Models;
 
 public class StorageLocationModel
@@ -9,6 +11,7 @@ public class StorageLocationModel
     public int WarehouseId { get; set; }
     public string Settings { get; set; }
     
+    [JsonConstructor]
     public StorageLocationModel(int id, int storageParametersId, string name, string description, int warehouseId, string settings)
     {
         Id = id;

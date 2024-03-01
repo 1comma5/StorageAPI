@@ -30,7 +30,7 @@ public class CategoryController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(Category? category)
     {
-        if (category == null) return Ok();
+        if (category == null) return BadRequest();
         var temp = await _categoryService.Add(category);
         if (temp == null) return BadRequest();
 
@@ -40,7 +40,7 @@ public class CategoryController : ControllerBase
     [HttpPut("update")]
     public async Task<IActionResult> Put(Category? category)
     {
-        if (category == null) return Ok();
+        if (category == null) return BadRequest();
         var temp = await _categoryService.Update(category);
         if (temp == null) return BadRequest();
 

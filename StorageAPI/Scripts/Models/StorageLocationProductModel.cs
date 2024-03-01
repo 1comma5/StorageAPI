@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace StorageAPI.Scripts.Models;
 
 public class StorageLocationProductModel
@@ -11,6 +13,7 @@ public class StorageLocationProductModel
     public DateTime ExpirationDate { get; set; }
     public int SupplierId { get; set; }
     
+    [JsonConstructor]
     public StorageLocationProductModel(int id, int productId, int storageLocationId, int quantity, DateTime arrivalDate, DateTime productionDate, DateTime expirationDate, int supplierId)
     {
         Id = id;

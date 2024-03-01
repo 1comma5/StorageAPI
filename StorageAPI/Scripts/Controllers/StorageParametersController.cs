@@ -27,7 +27,7 @@ public class StorageParametersController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(StorageParameters? storageParameters)
     {
-        if (storageParameters == null) return Ok();
+        if (storageParameters == null) return BadRequest();
         var temp = await _storageParametersService.Add(storageParameters);
         if (temp == null) return BadRequest();
         return Ok();
@@ -35,7 +35,7 @@ public class StorageParametersController : ControllerBase
     [HttpPut("update")]
     public async Task<IActionResult> Put(StorageParameters? storageParameters)
     {
-        if (storageParameters == null) return Ok();
+        if (storageParameters == null) return BadRequest();
         var temp = await _storageParametersService.Update(storageParameters);
         if (temp == null) return BadRequest();
         return Ok();

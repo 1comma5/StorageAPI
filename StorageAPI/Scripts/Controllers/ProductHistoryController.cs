@@ -26,7 +26,7 @@ public class ProductHistoryController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(ProductHistoryModel? productHistoryModel)
     {
-        if (productHistoryModel == null) return Ok();
+        if (productHistoryModel == null) return BadRequest();
         var temp = await _productHistoryService.Add(productHistoryModel);
         if (temp == null) return BadRequest();
         return Ok();
@@ -34,7 +34,7 @@ public class ProductHistoryController : ControllerBase
     [HttpPut("update")]
     public async Task<IActionResult> Put(ProductHistoryModel? productHistoryModel)
     {
-        if (productHistoryModel == null) return Ok();
+        if (productHistoryModel == null) return BadRequest();
         var temp = await _productHistoryService.Update(productHistoryModel);
         if (temp == null) return BadRequest();
         return Ok();

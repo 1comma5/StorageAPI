@@ -31,7 +31,7 @@ public class OperationTypeController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(OperationType? operationType)
     {
-        if (operationType == null) return Ok();
+        if (operationType == null) return BadRequest();
         var temp = await _operationTypeService.Add(operationType);
         if (temp == null) return BadRequest();
         return Ok();
@@ -40,7 +40,7 @@ public class OperationTypeController : ControllerBase
     [HttpPut("update")]
     public async Task<IActionResult> Put(OperationType? operationType)
     {
-        if (operationType == null) return Ok();
+        if (operationType == null) return BadRequest();
         var temp = await _operationTypeService.Update(operationType);
         if (temp == null) return BadRequest();
         return Ok();

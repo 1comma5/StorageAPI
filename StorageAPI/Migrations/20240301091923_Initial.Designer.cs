@@ -12,7 +12,7 @@ using StorageAPI.Scripts;
 namespace StorageAPI.Migrations
 {
     [DbContext(typeof(StorageDbContext))]
-    [Migration("20240218104159_Initial")]
+    [Migration("20240301091923_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -318,13 +318,11 @@ namespace StorageAPI.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AdditionalNumber")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("AdditionalNumber")
+                        .HasColumnType("integer");
 
-                    b.Property<string>("ArticleCode")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("ArticleCode")
+                        .HasColumnType("integer");
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("integer");
@@ -365,8 +363,8 @@ namespace StorageAPI.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("Cost")
-                        .HasColumnType("numeric");
+                    b.Property<int>("Cost")
+                        .HasColumnType("integer");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");

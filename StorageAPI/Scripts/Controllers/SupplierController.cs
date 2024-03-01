@@ -28,7 +28,7 @@ public class SupplierController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(SupplierModel? supplierModel)
     {
-        if (supplierModel == null) return Ok();
+        if (supplierModel == null) return BadRequest();
         var temp = await _supplierService.Add(supplierModel);
         if (temp == null) return BadRequest();
         return Ok();
@@ -36,7 +36,7 @@ public class SupplierController : ControllerBase
     [HttpPut("update")]
     public async Task<IActionResult> Put(SupplierModel? supplierModel)
     {
-        if (supplierModel == null) return Ok();
+        if (supplierModel == null) return BadRequest();
         var temp = await _supplierService.Update(supplierModel);
         if (temp == null) return BadRequest();
         return Ok();

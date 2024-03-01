@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace StorageAPI.Scripts.Models;
 
 public class ProductHistoryModel
@@ -9,6 +11,7 @@ public class ProductHistoryModel
     public int StorageLocationId { get; set; }
     public int Quantity { get; set; }
 
+    [JsonConstructor]
     public ProductHistoryModel(int id, DateTime date, int operationTypeId, int storageLocationProductId,
         int storageLocationId, int quantity)
     {

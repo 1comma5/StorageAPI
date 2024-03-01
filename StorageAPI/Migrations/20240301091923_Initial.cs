@@ -243,8 +243,8 @@ namespace StorageAPI.Migrations
                     IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
-                    ArticleCode = table.Column<string>(type: "text", nullable: false),
-                    AdditionalNumber = table.Column<string>(type: "text", nullable: false),
+                    ArticleCode = table.Column<int>(type: "integer", nullable: false),
+                    AdditionalNumber = table.Column<int>(type: "integer", nullable: false),
                     ManufacturerId = table.Column<int>(type: "integer", nullable: false),
                     UnitOfMeasureId = table.Column<int>(type: "integer", nullable: false),
                     CategoryId = table.Column<int>(type: "integer", nullable: false)
@@ -365,7 +365,7 @@ namespace StorageAPI.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
                     ProductId = table.Column<int>(type: "integer", nullable: false),
-                    Cost = table.Column<decimal>(type: "numeric", nullable: false),
+                    Cost = table.Column<int>(type: "integer", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>

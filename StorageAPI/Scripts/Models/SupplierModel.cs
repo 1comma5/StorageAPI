@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace StorageAPI.Scripts.Models;
 
 public class SupplierModel
@@ -9,6 +11,7 @@ public class SupplierModel
     public string Address { get; set; }
     public int ContactPersonId { get; set; }
     
+    [JsonConstructor]
     public SupplierModel(int id, string name, string phone, string email, string address, int contactPersonId)
     {
         Id = id;

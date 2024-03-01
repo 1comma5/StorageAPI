@@ -27,7 +27,7 @@ public class WarehouseController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(Warehouse? warehouse)
     {
-        if (warehouse == null) return Ok();
+        if (warehouse == null) return BadRequest();
         var temp = await _warehouseService.Add(warehouse);
         if (temp == null) return BadRequest();
         return Ok();
@@ -35,7 +35,7 @@ public class WarehouseController : ControllerBase
     [HttpPut("update")]
     public async Task<IActionResult> Put(Warehouse? warehouse)
     {
-        if (warehouse == null) return Ok();
+        if (warehouse == null) return BadRequest();
         var temp = await _warehouseService.Update(warehouse);
         if (temp == null) return BadRequest();
         return Ok();

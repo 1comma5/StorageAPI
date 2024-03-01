@@ -27,7 +27,7 @@ public class OrderStatusController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(OrderStatus? orderStatus)
     {
-        if (orderStatus == null) return Ok();
+        if (orderStatus == null) return BadRequest();
         var temp = await _orderStatusService.Add(orderStatus);
         if (temp == null) return BadRequest();
         return Ok();
@@ -35,7 +35,7 @@ public class OrderStatusController : ControllerBase
     [HttpPut("update")]
     public async Task<IActionResult> Put(OrderStatus? orderStatus)
     {
-        if (orderStatus == null) return Ok();
+        if (orderStatus == null) return BadRequest();
         var temp = await _orderStatusService.Update(orderStatus);
         if (temp == null) return BadRequest();
         return Ok();

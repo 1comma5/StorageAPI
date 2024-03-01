@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Query.Expressions.Internal;
 
 namespace StorageAPI.Scripts.Models;
@@ -8,12 +9,13 @@ public class ProductModel
     public string Name { get; set; }
     public string Description { get; set; }
     public int ArticleCode { get; set; }
-    public int AdditionalNumber { get; set; }
+    public string AdditionalNumber { get; set; }
     public int ManufacturerId { get; set; }
     public int UnitOfMeasureId { get; set; }
     public int CategoryId { get; set; }
 
-    public ProductModel(int id, string name, string description, int articleCode, int additionalNumber, int manufacturerId, int unitOfMeasureId, int categoryId)
+    [JsonConstructor]
+    public ProductModel(int id, string name, string description, int articleCode, string additionalNumber, int manufacturerId, int unitOfMeasureId, int categoryId)
     {
         Id = id;
         Name = name;

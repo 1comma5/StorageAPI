@@ -29,7 +29,7 @@ public class ClientController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(Client? client)
     {
-        if (client == null) return Ok();
+        if (client == null) return BadRequest();
         var temp = await _clientService.Add(client);
         if (temp == null) return BadRequest();
         return Ok();
@@ -37,7 +37,7 @@ public class ClientController : ControllerBase
     [HttpPut("update")]
     public async Task<IActionResult> Put(Client? client)
     {
-        if (client == null) return Ok();
+        if (client == null) return BadRequest();
         var temp = await _clientService.Update(client);
         if (temp == null) return BadRequest();
         return Ok();

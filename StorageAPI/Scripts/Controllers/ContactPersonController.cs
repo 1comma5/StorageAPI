@@ -29,7 +29,7 @@ public class ContactPersonController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(ContactPerson? contactPerson)
     {
-        if (contactPerson == null) return Ok();
+        if (contactPerson == null) return BadRequest();
         var temp = await _contactPersonService.Add(contactPerson);
         if (temp == null) return BadRequest();
         return Ok();
@@ -37,7 +37,7 @@ public class ContactPersonController : ControllerBase
     [HttpPut("update")]
     public async Task<IActionResult> Put(ContactPerson? contactPerson)
     {
-        if (contactPerson == null) return Ok();
+        if (contactPerson == null) return BadRequest();
         var temp = await _contactPersonService.Update(contactPerson);
         if (temp == null) return BadRequest();
         return Ok();

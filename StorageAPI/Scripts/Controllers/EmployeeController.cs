@@ -27,7 +27,7 @@ public class EmployeeController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(Employee? employee)
     {
-        if (employee == null) return Ok();
+        if (employee == null) return BadRequest();
         var temp = await _employeeService.Add(employee);
         if (temp == null) return BadRequest();
         return Ok();
@@ -35,7 +35,7 @@ public class EmployeeController : ControllerBase
     [HttpPut("update")]
     public async Task<IActionResult> Put(Employee? employee)
     {
-        if (employee == null) return Ok();
+        if (employee == null) return BadRequest();
         var temp = await _employeeService.Update(employee);
         if (temp == null) return BadRequest();
         return Ok();

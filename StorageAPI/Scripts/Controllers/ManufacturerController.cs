@@ -27,7 +27,7 @@ public class ManufacturerController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(Manufacturer? manufacturer)
     {
-        if (manufacturer == null) return Ok();
+        if (manufacturer == null) return BadRequest();
         var temp = await _manufacturerService.Add(manufacturer);
         if (temp == null) return BadRequest();
         return Ok();
@@ -35,7 +35,7 @@ public class ManufacturerController : ControllerBase
     [HttpPut("update")]
     public async Task<IActionResult> Put(Manufacturer? manufacturer)
     {
-        if (manufacturer == null) return Ok();
+        if (manufacturer == null) return BadRequest();
         var temp = await _manufacturerService.Update(manufacturer);
         if (temp == null) return BadRequest();
         return Ok();

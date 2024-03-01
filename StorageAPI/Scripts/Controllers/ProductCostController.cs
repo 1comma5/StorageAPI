@@ -28,7 +28,7 @@ public class ProductCostController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(ProductCostModel? productCostModel)
     {
-        if (productCostModel == null) return Ok();
+        if (productCostModel == null) return BadRequest();
         var temp = await _productCostService.Add(productCostModel);
         if (temp == null) return BadRequest();
         return Ok();
@@ -36,7 +36,7 @@ public class ProductCostController : ControllerBase
     [HttpPut("update")]
     public async Task<IActionResult> Put(ProductCostModel? productCostModel)
     {
-        if (productCostModel == null) return Ok();
+        if (productCostModel == null) return BadRequest();
         var temp = await _productCostService.Update(productCostModel);
         if (temp == null) return BadRequest();
         return Ok();

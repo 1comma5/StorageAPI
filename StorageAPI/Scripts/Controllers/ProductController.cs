@@ -31,17 +31,17 @@ public class ProductController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(ProductModel? productModel)
     {
-        if (productModel == null) return Ok();
+        if (productModel == null) return BadRequest("ProductModel0");
         var temp = await _productService.Add(productModel);
-        if (temp == null) return BadRequest();
+        if (temp == null) return BadRequest("P123");
         return Ok();
     }
 
     [HttpPut("update")]
-    public async Task<IActionResult> Put(ProductModel? product)
+    public async Task<IActionResult> Put(ProductModel? productModel)
     {
-        if (product == null) return Ok();
-        var temp = await _productService.Update(product);
+        if (productModel == null) return BadRequest();
+        var temp = await _productService.Update(productModel);
         if (temp == null) return BadRequest();
         return Ok();
     }
