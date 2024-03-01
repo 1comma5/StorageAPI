@@ -328,3 +328,10 @@ W:\VKR\Server\StorageAPI\StorageAPI\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.W
 W:\VKR\Server\StorageAPI\StorageAPI\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 W:\VKR\Server\StorageAPI\StorageAPI\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 W:\VKR\Server\StorageAPI\StorageAPI\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\projects\StorageAPI\StorageAPI\bin\Debug\net8.0\Castle.Core.dll
+E:\projects\StorageAPI\StorageAPI\bin\Debug\net8.0\Moq.dll
+E:\projects\StorageAPI\StorageAPI\bin\Debug\net8.0\xunit.abstractions.dll
+E:\projects\StorageAPI\StorageAPI\bin\Debug\net8.0\xunit.assert.dll
+E:\projects\StorageAPI\StorageAPI\bin\Debug\net8.0\xunit.core.dll
+E:\projects\StorageAPI\StorageAPI\bin\Debug\net8.0\xunit.execution.dotnet.dll
+E:\projects\StorageAPI\StorageAPI\bin\Debug\net8.0\Newtonsoft.Json.dll

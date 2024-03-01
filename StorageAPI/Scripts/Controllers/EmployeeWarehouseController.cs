@@ -27,7 +27,7 @@ public class EmployeeWarehouseController : ControllerBase
     [HttpPost("add")]
     public async Task<IActionResult> Post(EmployeeWarehouseModel? employeeWarehouseModel)
     {
-        if (employeeWarehouseModel == null) return Ok();
+        if (employeeWarehouseModel == null) return BadRequest();
         var temp = await _employeeWarehouseService.Add(employeeWarehouseModel);
         if (temp == null) return BadRequest();
         return Ok();
