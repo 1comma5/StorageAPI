@@ -20,8 +20,9 @@
         <PackageReference Include="Moq" Version="4.20.70" />
         <PackageReference Include="Npgsql" Version="8.0.2" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.2" />
+        <PackageReference Include="NuGet.PackageManagement" Version="4.1.0" />
+        <PackageReference Include="NUnit" Version="4.1.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-        <PackageReference Include="xunit" Version="2.7.0" />
     </ItemGroup>
 
 </Project>
