@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using NUnit.Framework;
-using StorageAPI.Scripts;
 using StorageAPI.Scripts.Entities;
 using StorageAPI.Scripts.Services;
 
+namespace StorageAPI.Scripts.UnitTest;
 
 [TestFixture]
 public class CategoryServiceTest
@@ -16,12 +16,12 @@ public class CategoryServiceTest
     public async Task Setup()
     {
         var connectionStringBuilder = new NpgsqlConnectionStringBuilder
-            {
+        {
             Host = "localhost",
             Port = 5432,
             Database = "storage_service", // Используйте отдельную тестовую базу данных
             Username = "postgres",
-            Password = "1",
+            Password = "2560",
         };
         var options = new DbContextOptionsBuilder<StorageDbContext>()
             .UseNpgsql(connectionStringBuilder.ToString())
@@ -33,44 +33,83 @@ public class CategoryServiceTest
     [Test]
     public async Task Get_CategoryExists_ReturnsCategory()
     {
-        var category = new Category { Id = 1, Name = "TestCategory", IsDeleted = false, Description = "Очень странная"};
-        _storageDbContext.Categories.Add(category);
+        // Создаем тестовую категорию
+        var testCategory = new Category {Id = -778, Name = "TestCategory_777", IsDeleted = false, Description = "TestDescription_777"};
+        await _storageDbContext.Categories.AddAsync(testCategory);
         await _storageDbContext.SaveChangesAsync();
-
-        var result = await _categoryService.Get(1);
-
-        Assert.That(result, Is.Null);
-        Assert.Equals(category.Id, result?.Id);
-        Assert.Equals(category.Name, result?.Name);
+        
+        // Тестируем
+        var result = await _categoryService.Get(-778);
+        
+        Assert.That(result, Is.Not.Null);
+        Assert.That(result?.Name, Is.EqualTo("TestCategory_777"));
+        Assert.That(result?.Description, Is.EqualTo("TestDescription_777"));
+        Assert.That(result?.IsDeleted, Is.False);
+        
+        // Удаляем после теста
+        _storageDbContext.Categories.Remove(testCategory);
+        await _storageDbContext.SaveChangesAsync();
     }
 
     [Test]
     public async Task Add_ValidCategory_AddsCategoryToDatabase()
     {
-        var category = new Category { Name = "NewCategory", IsDeleted = false };
-
+        var isCreate = false;
+        
+        var category = new Category { Name = "NewCategoryTest_7773059784325", IsDeleted = false, Description = "TestDescription"};
         var result = await _categoryService.Add(category);
+        if (result != null) isCreate = true;
+        
 
-        Assert.That(result, Is.Null);
-        Assert.Equals(category, result);
+        Assert.That(result, Is.Not.Null);
+        Assert.That(category, Is.EqualTo(result));
         Assert.That(_storageDbContext.Categories.Any(c => c.Name == "NewCategory"), Is.True);
+        
+        // Удаляем после теста по имени "NewCategoryTest_7773059784325"
+        if (isCreate)
+        {
+            var deleteCategory = _storageDbContext.Categories.FirstOrDefault(c => c.Name == "NewCategoryTest_7773059784325");
+            if (deleteCategory != null) _storageDbContext.Categories.Remove(deleteCategory);
+        }
     }
 
     [Test]
     public async Task Update_ExistingCategory_UpdatesCategoryInDatabase()
     {
-        var category = new Category { Id = 1, Name = "TestCategory", IsDeleted = false };
-        _storageDbContext.Categories.Add(category);
+        // Создаем тестовую категорию
+        var testCategory = new Category {Id = -778, Name = "TestCategory_7778", IsDeleted = false, Description = "TestDescription_777"};
+        await _storageDbContext.Categories.AddAsync(testCategory);
         await _storageDbContext.SaveChangesAsync();
 
-        category.Name = "UpdatedCategory";
-        var result = await _categoryService.Update(category);
-
-        Assert.That(result, Is.Null);
-        Assert.Equals("UpdatedCategory", result.Name);
+        // Тестируем
+        testCategory.Name = "UpdatedCategory_777";
+        var result = await _categoryService.Update(testCategory);
+        
+        Assert.That(result, Is.Not.Null);
+        Assert.That(result?.Name, Is.EqualTo("UpdatedCategory_777"));
+        
+        // Удаляем после теста
+        _storageDbContext.Categories.Remove(testCategory);
+        await _storageDbContext.SaveChangesAsync();
     }
+    
+    [Test]
+    public async Task Delete_ExistingCategory_DeletesCategoryInDatabase()
+    {
+        // Создаем тестовую категорию
+        var testCategory = new Category {Id = -778, Name = "TestCategory_7778", IsDeleted = false, Description = "TestDescription_777"};
+        await _storageDbContext.Categories.AddAsync(testCategory);
+        await _storageDbContext.SaveChangesAsync();
 
-
+        // Тестируем
+        var result = await _categoryService.Delete(-778);
+        Assert.That(result, Is.True);
+        
+        // Удаляем после теста
+        _storageDbContext.Categories.Remove(testCategory);
+        await _storageDbContext.SaveChangesAsync();
+    }
+    
     [TearDown]
     public void TearDown()
     {
