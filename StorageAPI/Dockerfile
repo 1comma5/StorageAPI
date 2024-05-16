@@ -1,25 +1,15 @@
-#See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER app
+# Используем базовый образ для ASP.NET Core
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Release
-WORKDIR /src
-COPY ["StorageAPI/StorageAPI.csproj", "StorageAPI/"]
-RUN dotnet restore "./StorageAPI/StorageAPI.csproj"
-COPY . .
-WORKDIR "/src/StorageAPI"
-RUN dotnet build "./StorageAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build
+# Копируем все файлы из локальной папки bin/Release/net6.0/publish в контейнер
+COPY ./bin/Release/net8.0/ .
 
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./StorageAPI.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+# Убедимся, что файл StorageAPI.dll существует
+RUN ls -la /app
 
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
+# Задаем команду запуска приложения
 ENTRYPOINT ["dotnet", "StorageAPI.dll"]
+
+# Expose порт 8080 для доступа к приложению
+EXPOSE 8080
