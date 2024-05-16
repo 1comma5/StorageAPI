@@ -32,8 +32,8 @@ public class EmployeeWarehouseService
     public async Task<EmployeeWarehouseModel?> Add(EmployeeWarehouseModel employeeWarehouseModel)
     {
         // Выбираем из базы данных объекты Employee и Warehouse по id
-        var employee = await _context.Employees.FindAsync(employeeWarehouseModel.EmployeeId);
-        var warehouse = await _context.Warehouses.FindAsync(employeeWarehouseModel.WarehouseId);
+        var employee = await _context.Employees.FirstOrDefaultAsync();
+        var warehouse = await _context.Warehouses.FirstOrDefaultAsync();
         
         // Если хотя бы один из объектов не найден, возвращаем null
         if (employee == null || warehouse == null) return null;

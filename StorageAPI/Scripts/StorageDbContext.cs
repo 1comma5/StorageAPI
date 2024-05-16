@@ -32,6 +32,8 @@ public class StorageDbContext : DbContext
     public DbSet<UnitOfMeasure> UnitOfMeasures  { get; set; } = null!;
     public DbSet<Warehouse> Warehouses  { get; set; } = null!;
 
+
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         //optionsBuilder.UseNpgsql("Host=26.252.200.44;Port=5432;Database=storage_service;Username=postgres;Password=1"); // Martik

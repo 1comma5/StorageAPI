@@ -103,4 +103,16 @@ public async Task<bool> Delete(int id)
         x.OrderStatus.Id
       )).ToList();
     }
+
+    internal async Task<bool> UpdateStatus(int id, int statusId)
+    {
+        var order = await _context.Orders.FindAsync(id);
+        var orderStatus = await _context.OrderStatusEnumerable.FindAsync(statusId);
+        if (order == null || orderStatus == null) return false;
+        order.OrderStatus = orderStatus;
+        _context.Orders.Update(order);
+        await _context.SaveChangesAsync();
+        return true;
+
+    }
 }

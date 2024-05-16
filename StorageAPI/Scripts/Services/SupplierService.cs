@@ -30,7 +30,7 @@ public class SupplierService
 
     public async Task<SupplierModel?> Add(SupplierModel supplierModel)
     {
-       var contactPerson = await _context.ContactPersons.FindAsync(supplierModel.ContactPersonId);
+       var contactPerson = await _context.ContactPersons.FirstOrDefaultAsync();
         if (contactPerson == null) return null;
         var supplier = new Supplier
         {

@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using StorageAPI.Scripts;
 using StorageAPI.Scripts.Services;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
@@ -10,8 +11,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<StorageDbContext>(options =>
 {
+    
     // options.UseNpgsql("Host=localhost;Port=5432;Database=storage_service;Username=postgres;Password=2560");
-    options.UseNpgsql("Host=localhost;Port=5432;Database=storage_service;Username=postgres;Password=1");
+    options.UseNpgsql("Host=147.45.140.87;Port=5432;Database=default_db;Username=gen_user;Password=^S}qYNp3z>XJ_p");
     //options.UseNpgsql("Host=localhost;Port=5432;Database=storage_service;Username=postgres;Password=2560");
 });
 
@@ -35,6 +37,7 @@ builder.Services.AddScoped<StorageParametersService>();
 builder.Services.AddScoped<SupplierService>();
 builder.Services.AddScoped<UnitOfMeasureService>();
 builder.Services.AddScoped<WarehouseService>();
+builder.Services.AddScoped<SettingsService>();
 
 
 var app = builder.Build();
@@ -44,6 +47,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 

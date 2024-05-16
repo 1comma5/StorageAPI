@@ -12,8 +12,8 @@ using StorageAPI.Scripts;
 namespace StorageAPI.Migrations
 {
     [DbContext(typeof(StorageDbContext))]
-    [Migration("20240301091923_Initial")]
-    partial class Initial
+    [Migration("20240515131632_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -318,8 +318,9 @@ namespace StorageAPI.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AdditionalNumber")
-                        .HasColumnType("integer");
+                    b.Property<string>("AdditionalNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("ArticleCode")
                         .HasColumnType("integer");

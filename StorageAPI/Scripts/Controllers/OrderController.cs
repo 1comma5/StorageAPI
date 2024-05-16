@@ -47,4 +47,12 @@ public class OrderController : ControllerBase
         if (!temp) return BadRequest();
         return Ok();
     }
+
+    [HttpPost("update_status")]
+    public async Task<IActionResult> UpdateStatus(int id, int statusId)
+    {
+        var temp = await _orderService.UpdateStatus(id, statusId);
+        if (!temp) return BadRequest();
+        return Ok();
+    }
 }

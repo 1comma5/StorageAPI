@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace StorageAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -244,7 +244,7 @@ namespace StorageAPI.Migrations
                     Name = table.Column<string>(type: "text", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
                     ArticleCode = table.Column<int>(type: "integer", nullable: false),
-                    AdditionalNumber = table.Column<int>(type: "integer", nullable: false),
+                    AdditionalNumber = table.Column<string>(type: "text", nullable: false),
                     ManufacturerId = table.Column<int>(type: "integer", nullable: false),
                     UnitOfMeasureId = table.Column<int>(type: "integer", nullable: false),
                     CategoryId = table.Column<int>(type: "integer", nullable: false)
