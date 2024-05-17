@@ -14,6 +14,21 @@ public class ProductModel
     public int UnitOfMeasureId { get; set; }
     public int CategoryId { get; set; }
 
+    public int Quantity { get; set; }
+
+    [JsonConstructor]
+    public ProductModel(int id, string name, string description, int articleCode, string additionalNumber, int manufacturerId, int unitOfMeasureId, int categoryId, int quantity)
+    {
+        Id = id;
+        Name = name;
+        Description = description;
+        ArticleCode = articleCode;
+        AdditionalNumber = additionalNumber;
+        ManufacturerId = manufacturerId;
+        UnitOfMeasureId = unitOfMeasureId;
+        CategoryId = categoryId;
+        Quantity = quantity;
+    }
     [JsonConstructor]
     public ProductModel(int id, string name, string description, int articleCode, string additionalNumber, int manufacturerId, int unitOfMeasureId, int categoryId)
     {
@@ -25,6 +40,7 @@ public class ProductModel
         ManufacturerId = manufacturerId;
         UnitOfMeasureId = unitOfMeasureId;
         CategoryId = categoryId;
+        Quantity = 1;
     }
 
 }

@@ -49,9 +49,9 @@ public class OrderController : ControllerBase
     }
 
     [HttpPost("update_status")]
-    public async Task<IActionResult> UpdateStatus(int id, int statusId)
+    public async Task<IActionResult> UpdateStatus(int id, string status)
     {
-        var temp = await _orderService.UpdateStatus(id, statusId);
+        var temp = await _orderService.UpdateStatus(id, status);
         if (!temp) return BadRequest();
         return Ok();
     }

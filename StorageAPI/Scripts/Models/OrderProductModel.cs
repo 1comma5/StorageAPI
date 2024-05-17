@@ -8,6 +8,7 @@ public class OrderProductModel
     public int OrderId { get; set; }
     public int ProductId { get; set; }
     public int Quantity { get; set; }
+
     
     [JsonConstructor]
     public OrderProductModel(int id, int orderId, int productId, int quantity)
