@@ -28,8 +28,8 @@ public class ProductCostService
 
    public async Task<ProductCostModel?> Add(ProductCostModel productCostModel)
    {
-       var product = await _context.Products.FindAsync(productCostModel.ProductId);
-       if (product == null) return null;
+        var product = await _context.Products.FirstOrDefaultAsync();
+        if (product == null) return null;
 
        var productCost = new ProductCost
        {

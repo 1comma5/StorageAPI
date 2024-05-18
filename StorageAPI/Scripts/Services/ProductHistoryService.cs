@@ -30,7 +30,8 @@ public class ProductHistoryService
     }
     public async Task<ProductHistoryModel?> Add(ProductHistoryModel productHistoryModel)
     {
-        var operationType = await _context.OperationTypes.FindAsync(productHistoryModel.OperationTypeId);
+        var operationType = await _context.OperationTypes.FirstOrDefaultAsync();
+        if (operationType == null) return null;
         var storageLocationProduct = await _context.StorageLocationProducts.FindAsync(productHistoryModel.StorageLocationProductId);
         var storageLocation = await _context.StorageLocations.FindAsync(productHistoryModel.StorageLocationId);
         if ( operationType == null || storageLocationProduct == null || storageLocation == null) return null;

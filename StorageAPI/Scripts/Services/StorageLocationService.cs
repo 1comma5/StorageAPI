@@ -28,8 +28,10 @@ public class StorageLocationService
     }
     public async Task<StorageLocationModel?> Add(StorageLocationModel storageLocationModel)
     {
-       var storageParameters = await _context.StorageParametersEnumerable.FindAsync(storageLocationModel.StorageParametersId);
-        var warehouse = await _context.Warehouses.FindAsync(storageLocationModel.WarehouseId);
+       var storageParameters = await _context.StorageParametersEnumerable.FirstOrDefaultAsync();
+        if (storageParameters == null) return null;
+        var warehouse = await _context.Warehouses.FirstOrDefaultAsync();
+        if (warehouse == null) return null;
         if (storageParameters == null || warehouse == null) return null;
         var storageLocation = new StorageLocation
         {

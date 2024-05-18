@@ -35,9 +35,12 @@ public class StorageLocationProductService
 
     public async Task<StorageLocationProductModel?> Add(StorageLocationProductModel storageLocationProductModel)
     {
-        var product = await _context.Products.FindAsync(storageLocationProductModel.ProductId);
-        var storageLocation = await _context.StorageLocations.FindAsync(storageLocationProductModel.StorageLocationId);
-        var supplier = await _context.Suppliers.FindAsync(storageLocationProductModel.SupplierId);
+        var product = await _context.Products.FirstOrDefaultAsync();
+        if (product == null) return null;
+        var storageLocation = await _context.StorageLocations.FirstOrDefaultAsync();
+        if (storageLocation == null) return null;
+        var supplier = await _context.Suppliers.FirstOrDefaultAsync();
+        if (supplier == null) return null;
         if (product == null || storageLocation == null || supplier == null) return null;
         var storageLocationProduct = new StorageLocationProduct
         {

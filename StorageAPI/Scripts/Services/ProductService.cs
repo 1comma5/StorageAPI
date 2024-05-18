@@ -36,8 +36,10 @@ public class ProductService
 
     public async Task<ProductModel?> Add(ProductModel productModel)
     {
-        var manufacturer = await _context.Manufacturers.FindAsync(productModel.ManufacturerId);
-        var unitOfMeasure = await _context.UnitOfMeasures.FindAsync(productModel.UnitOfMeasureId);
+        var manufacturer = await _context.Manufacturers.FirstOrDefaultAsync();
+        if(manufacturer == null) return null;
+        var unitOfMeasure = await _context.UnitOfMeasures.FirstOrDefaultAsync();
+        if (unitOfMeasure == null) return null;
         var category = await _context.Categories.FindAsync(productModel.CategoryId);
 
         if (manufacturer == null || unitOfMeasure == null || category == null) return null;
