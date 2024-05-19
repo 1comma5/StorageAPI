@@ -29,18 +29,5 @@ public class ProductModel
         CategoryId = categoryId;
         Quantity = quantity;
     }
-    [JsonConstructor]
-    public ProductModel(int id, string name, string description, int articleCode, string additionalNumber, int manufacturerId, int unitOfMeasureId, int categoryId)
-    {
-        Id = id;
-        Name = name;
-        Description = description;
-        ArticleCode = articleCode;
-        AdditionalNumber = additionalNumber;
-        ManufacturerId = manufacturerId;
-        UnitOfMeasureId = unitOfMeasureId;
-        CategoryId = categoryId;
-        Quantity = 1;
-    }
 
 }
