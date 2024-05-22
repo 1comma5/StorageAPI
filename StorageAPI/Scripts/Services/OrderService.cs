@@ -61,9 +61,13 @@ public class OrderService
 
     if (orderStatus == null)
     {
-        orderStatus = new OrderStatus { Name = orderModel.OrderStatus, Description = "Описание статуса заказа" }; // Установите значение Description
-        _context.OrderStatusEnumerable.Add(orderStatus);
-        await _context.SaveChangesAsync(); // Сохраняем новый статус заказа в базу данных
+    orderStatus = new OrderStatus 
+    { 
+        Name = orderModel.OrderStatus, 
+        Description = "Описание статуса заказа" // Установите значение Description
+    };
+    _context.OrderStatusEnumerable.Add(orderStatus);
+    await _context.SaveChangesAsync(); // Сохраняем новый статус заказа в базу данных
     }
 
     if (client == null || employee == null) return null;
