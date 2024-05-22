@@ -52,8 +52,8 @@ public class OrderService
         return new OrderModel(order.Id, order.Client.Id, order.Employee.Id, order.OrderStatus.Name, productModels);
     }
 
-  public async Task<OrderModel?> Add(OrderModel orderModel)
-{
+    public async Task<OrderModel?> Add(OrderModel orderModel)
+    {
     // Проверить, что существуют клиент, сотрудник и статус заказа
     var client = await _context.Clients.FirstOrDefaultAsync(x => x.Id == orderModel.ClientId && !x.IsDeleted);
     var employee = await _context.Employees.FirstOrDefaultAsync(x => x.Id == orderModel.EmployeeId && !x.IsDeleted);
@@ -61,7 +61,7 @@ public class OrderService
 
     if (orderStatus == null)
     {
-        orderStatus = new OrderStatus { Name = orderModel.OrderStatus };
+        orderStatus = new OrderStatus { Name = orderModel.OrderStatus, Description = "Описание статуса заказа" }; // Установите значение Description
         _context.OrderStatusEnumerable.Add(orderStatus);
         await _context.SaveChangesAsync(); // Сохраняем новый статус заказа в базу данных
     }
