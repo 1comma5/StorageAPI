@@ -54,79 +54,63 @@ public class OrderService
 
     public async Task<OrderModel?> Add(OrderModel orderModel)
     {
-    // Проверить, что существуют клиент, сотрудник и статус заказа
-    var client = await _context.Clients.FirstOrDefaultAsync(x => x.Id == orderModel.ClientId && !x.IsDeleted);
-    var employee = await _context.Employees.FirstOrDefaultAsync(x => x.Id == orderModel.EmployeeId && !x.IsDeleted);
-    var orderStatus = await _context.OrderStatusEnumerable.FirstOrDefaultAsync(x => x.Name == orderModel.OrderStatus);
+        // Проверить, что существуют клиент, сотрудник и статус заказа
+        var client = await _context.Clients.FirstOrDefaultAsync(x => x.Id == orderModel.ClientId && !x.IsDeleted);
+        var employee = await _context.Employees.FirstOrDefaultAsync(x => x.Id == orderModel.EmployeeId && !x.IsDeleted);
+        var orderStatus = await _context.OrderStatusEnumerable.FirstOrDefaultAsync(x => x.Name == orderModel.OrderStatus);
 
-    if (orderStatus == null)
-    {
-    orderStatus = new OrderStatus 
-    { 
-        Name = orderModel.OrderStatus, 
-        Description = "Описание статуса заказа" // Установите значение Description
-    };
-    _context.OrderStatusEnumerable.Add(orderStatus);
-    await _context.SaveChangesAsync(); // Сохраняем новый статус заказа в базу данных
-    }
-
-    if (client == null || employee == null) return null;
-
-    // Проверить продукты
-    foreach (var productModel in orderModel.Products)
-    {
-        var product = await _context.Products.FirstOrDefaultAsync(x => x.Id == productModel.Id && !x.IsDeleted);
-        if (product == null) return null;
-    }
-
-    // Создать order
-    var order = new Order
-    {
-        Client = client,
-        Employee = employee,
-        OrderStatus = orderStatus
-    };
-
-    // Добавить продукты в заказ
-    foreach (var productModel in orderModel.Products)
-    {
-        var product = await _context.Products.FirstOrDefaultAsync(x => x.Id == productModel.Id && !x.IsDeleted);
-        if (product != null)
+        if (orderStatus == null)
         {
-            var orderProduct = new OrderProduct
+            orderStatus = new OrderStatus
             {
-                Order = order,
-                Product = product,
-                Quantity = productModel.Quantity // Предполагается, что OrderProduct имеет свойство Quantity
+                Name = orderModel.OrderStatus,
+                Description = "Описание статуса заказа" // Установите значение Description
             };
-            _context.OrderProducts.Add(orderProduct); // Добавляем новый OrderProduct в контекст
+            _context.OrderStatusEnumerable.Add(orderStatus);
+            await _context.SaveChangesAsync(); // Сохраняем новый статус заказа в базу данных
         }
-    }
 
-    _context.Orders.Add(order);
-    await _context.SaveChangesAsync(); // Сохраняем новый заказ в базу данных
+        if (client == null || employee == null) return null;
 
-    return orderModel;
-}
-
-        // Создать orderProducts
+        // Проверить продукты
         foreach (var productModel in orderModel.Products)
         {
             var product = await _context.Products.FirstOrDefaultAsync(x => x.Id == productModel.Id && !x.IsDeleted);
-            if (product == null) continue;
-            var orderProduct = new OrderProduct
-            {
-                Order = order,
-                Product = product,
-                Quantity = productModel.Quantity
-            };
-            await _context.OrderProducts.AddAsync(orderProduct);
+            if (product == null) return null;
         }
 
-        await _context.SaveChangesAsync();
+        // Создать order
+        var order = new Order
+        {
+            Client = client,
+            Employee = employee,
+            OrderStatus = orderStatus
+        };
 
-        return await Get(order.Id);
+        _context.Orders.Add(order);
+
+        // Добавить продукты в заказ
+        foreach (var productModel in orderModel.Products)
+        {
+            var product = await _context.Products.FirstOrDefaultAsync(x => x.Id == productModel.Id && !x.IsDeleted);
+            if (product != null)
+            {
+                var orderProduct = new OrderProduct
+                {
+                    Order = order,
+                    Product = product,
+                    Quantity = productModel.Quantity // Предполагается, что OrderProduct имеет свойство Quantity
+                };
+                _context.OrderProducts.Add(orderProduct); // Добавляем новый OrderProduct в контекст
+            }
+        }
+
+        await _context.SaveChangesAsync(); // Сохраняем новый заказ в базу данных
+
+        return orderModel;
     }
+
+        
 
 
     public async Task<OrderModel?> Update(OrderModel orderModel)
