@@ -31,7 +31,7 @@ public class ProductService
             product.Manufacturer.Id,
             product.UnitOfMeasure.Id,
             product.Category.Id,
-            1
+            0
         );
     }
 
@@ -67,7 +67,7 @@ public class ProductService
             product.Manufacturer.Id,
             product.UnitOfMeasure.Id,
             product.Category.Id,
-            1
+            0
         );
     }
 
@@ -100,7 +100,7 @@ public class ProductService
             product.Manufacturer.Id,
             product.UnitOfMeasure.Id,
             product.Category.Id,
-            1
+            0
         );
     }
 
@@ -131,7 +131,7 @@ public class ProductService
             x.Manufacturer.Id,
             x.UnitOfMeasure.Id,
             x.Category.Id,
-            1
+            0
         )).ToList();
     }
 
