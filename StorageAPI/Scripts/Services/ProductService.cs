@@ -35,15 +35,22 @@ public class ProductService
         );
     }
 
-    public async Task<ProductModel?> Add(ProductModel productModel)
+    public async Task<ProductModel?> Add(ProductModel productModel, int storageLocationId)
     {
         var manufacturer = await _context.Manufacturers.FirstOrDefaultAsync();
-        if(manufacturer == null) return null;
+        if (manufacturer == null) return null;
+
         var unitOfMeasure = await _context.UnitOfMeasures.FirstOrDefaultAsync();
         if (unitOfMeasure == null) return null;
-        var category = await _context.Categories.FindAsync(productModel.CategoryId);
 
-        if (manufacturer == null || unitOfMeasure == null || category == null) return null;
+        var category = await _context.Categories.FirstOrDefaultAsync();
+        if (category == null) return null;
+
+        var storageLocation = await _context.StorageLocations.FindAsync(storageLocationId);
+        if (storageLocation == null) return null;
+
+        var supplier = await _context.Suppliers.FirstOrDefaultAsync();
+        if (supplier == null) return null;
 
         var product = new Product
         {
@@ -58,6 +65,22 @@ public class ProductService
 
         await _context.Products.AddAsync(product);
         await _context.SaveChangesAsync();
+
+        var storageLocationProduct = new StorageLocationProduct
+        {
+            Product = product,
+            StorageLocation = storageLocation,
+            Quantity = productModel.Quantity,
+            ArrivalDate = DateTime.UtcNow,
+            ProductionDate = DateTime.UtcNow,
+            ExpirationDate = DateTime.UtcNow.AddYears(1),
+            Supplier = supplier,
+            IsDeleted = false
+        };
+
+        await _context.StorageLocationProducts.AddAsync(storageLocationProduct);
+        await _context.SaveChangesAsync();
+
         return new ProductModel(
             product.Id,
             product.Name,
@@ -67,11 +90,11 @@ public class ProductService
             product.Manufacturer.Id,
             product.UnitOfMeasure.Id,
             product.Category.Id,
-            0
+            storageLocationProduct.Quantity
         );
-    }
+ }
 
-    public async Task<ProductModel?> Update(ProductModel productModel)
+public async Task<ProductModel?> Update(ProductModel productModel)
     {
         var product = await _context.Products
             .Include(p => p.Manufacturer)
@@ -131,6 +154,32 @@ public class ProductService
             x.Manufacturer.Id,
             x.UnitOfMeasure.Id,
             x.Category.Id,
+            0
+        )).ToList();
+    }
+
+    internal async Task<List<ProductModel>> GetAllStorageLocation(int storageLocationId)
+    {
+        var storageLocationProducts = await _context.StorageLocationProducts
+            .Include(p => p.StorageLocation)
+            .Include(p => p.Product)
+                .ThenInclude(p => p.Manufacturer)
+            .Include(p => p.Product)
+                .ThenInclude(p => p.UnitOfMeasure)
+            .Include(p => p.Product)
+                .ThenInclude(p => p.Category)
+            .Where(p => !p.IsDeleted && p.StorageLocationId == storageLocationId)
+            .ToListAsync();
+
+        return storageLocationProducts.Select(x => new ProductModel(
+            x.Product.Id,
+            x.Product.Name,
+            x.Product.Description,
+            x.Product.ArticleCode,
+            x.Product.AdditionalNumber,
+            x.Product.Manufacturer.Id,
+            x.Product.UnitOfMeasure.Id,
+            x.Product.Category.Id,
             0
         )).ToList();
     }

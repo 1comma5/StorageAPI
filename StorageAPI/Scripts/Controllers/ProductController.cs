@@ -28,14 +28,23 @@ public class ProductController : ControllerBase
         return await _productService.GetAll();
     }
 
-    [HttpPost("add")]
-    public async Task<IActionResult> Post(ProductModel? productModel)
+    [HttpGet("get-all-storage-location")]
+    public async Task<List<ProductModel>> GetAllStorageLocation(int storageLocationId)
     {
-        if (productModel == null) return BadRequest("ProductModel0");
-        var temp = await _productService.Add(productModel);
-        if (temp == null) return BadRequest("P123");
-        return Ok();
+        return await _productService.GetAllStorageLocation(storageLocationId);
     }
+
+    [HttpPost("add")]
+    public async Task<IActionResult> Post([FromBody] ProductModel productModel, [FromQuery] int storageLocationId)
+    {
+        if (productModel == null) return BadRequest("ProductModel is null");
+
+        var temp = await _productService.Add(productModel, storageLocationId);
+        if (temp == null) return BadRequest("Failed to add product");
+
+        return Ok(temp); // Возвращаем созданный продукт
+    }
+
 
     [HttpPut("update")]
     public async Task<IActionResult> Put(ProductModel? productModel)

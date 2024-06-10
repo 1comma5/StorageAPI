@@ -12,7 +12,7 @@ public class ProductModel
     public string AdditionalNumber { get; set; }
     public int ManufacturerId { get; set; }
     public int UnitOfMeasureId { get; set; }
-    public int CategoryId { get; set; }
+    public int CategoryId { get; set; } 
 
     public int Quantity { get; set; }
 
