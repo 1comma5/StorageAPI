@@ -49,7 +49,7 @@ public class OrderService
             );
         }
 
-        return new OrderModel(order.Id, order.Client.Id, order.Employee.Id, order.OrderStatus.Name, productModels);
+        return new OrderModel(order.Id, order.Client.Id, order.ExecutionDate, order.Employee.Id, order.OrderStatus.Name, productModels);
     }
 
     public async Task<OrderModel?> Add(OrderModel orderModel)
@@ -110,9 +110,6 @@ public class OrderService
         return orderModel;
     }
 
-        
-
-
     public async Task<OrderModel?> Update(OrderModel orderModel)
     {
         // Получить order по id
@@ -149,7 +146,7 @@ public class OrderService
             orderStatus = new OrderStatus { Name = orderModel.OrderStatus };
             await _context.OrderStatusEnumerable.AddAsync(orderStatus);
         }
-        
+
         if (client == null || employee == null) return null;
         // Проверить продукты
         foreach (var productModel in orderModel.Products)
@@ -179,7 +176,32 @@ public class OrderService
 
         await _context.SaveChangesAsync();
 
-        return await Get(order.Id);
+        // Получить orderProducts по order и включить Product
+        orderProducts = await _context.OrderProducts
+            .Include(op => op.Product).ThenInclude(product => product.Manufacturer)
+            .Include(op => op.Product).ThenInclude(product => product.UnitOfMeasure)
+            .Include(op => op.Product).ThenInclude(product => product.Category)
+            .Where(op => op.Order == order)
+            .ToListAsync();
+
+        var productModels = new ProductModel[orderProducts.Count];
+        for (var i = 0; i < orderProducts.Count; i++)
+        {
+            var orderProduct = orderProducts[i];
+            productModels[i] = new ProductModel(
+                orderProduct.Product.Id,
+                orderProduct.Product.Name,
+                orderProduct.Product.Description,
+                orderProduct.Product.ArticleCode,
+                orderProduct.Product.AdditionalNumber,
+                orderProduct.Product.Manufacturer.Id,
+                orderProduct.Product.UnitOfMeasure.Id,
+                orderProduct.Product.Category.Id,
+                orderProduct.Quantity
+            );
+        }
+
+        return new OrderModel(order.Id, order.Client.Id, order.ExecutionDate, order.Employee.Id, order.OrderStatus.Name, productModels);
     }
 
     public async Task<bool> Delete(int id)
@@ -190,7 +212,7 @@ public class OrderService
             .Include(x => x.Employee)
             .Include(x => x.OrderStatus)
             .FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
-        
+
         // Удаление это просто пометка IsDeleted = true
         if (order == null) return false;
         order.IsDeleted = true;
@@ -236,26 +258,23 @@ public class OrderService
                 );
             }
 
-            orderModels.Add(new OrderModel(order.Id, order.Client.Id, order.Employee.Id, order.OrderStatus.Name, productModels));
+            orderModels.Add(new OrderModel(order.Id, order.Client.Id, order.ExecutionDate, order.Employee.Id, order.OrderStatus.Name, productModels));
         }
 
         return orderModels;
     }
-
     public async Task<bool> UpdateStatus(int id, string status)
     {
         // Получить order по id
         var order = await _context.Orders
-            .Include(x => x.Client)
-            .Include(x => x.Employee)
-            .Include(x => x.OrderStatus)
             .FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
 
         if (order == null) return false;
 
         // Получить статус заказа
         // Если статус заказа не существует, создать его и добавить в базу данных
-        var orderStatus = await _context.OrderStatusEnumerable.FirstOrDefaultAsync(x => x.Name == status);
+        var orderStatus = await _context.OrderStatusEnumerable
+            .FirstOrDefaultAsync(x => x.Name == status);
         if (orderStatus == null)
         {
             orderStatus = new OrderStatus { Name = status };
@@ -267,4 +286,5 @@ public class OrderService
         await _context.SaveChangesAsync();
         return true;
     }
+
 }
