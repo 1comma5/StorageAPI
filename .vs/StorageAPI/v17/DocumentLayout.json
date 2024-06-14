@@ -7,6 +7,26 @@
       "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\scripts\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\scripts\\services\\settingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\scripts\\services\\settingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\scripts\\services\\storagelocationproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\scripts\\services\\storagelocationproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\scripts\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\scripts\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\scripts\\services\\productcostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\scripts\\services\\productcostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\scripts\\services\\orderstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\scripts\\services\\orderstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\scripts\\models\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\scripts\\models\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,18 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\scripts\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\scripts\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\scripts\\services\\orderstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\scripts\\services\\orderstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\scripts\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\scripts\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\scripts\\services\\settingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\scripts\\services\\settingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\scripts\\models\\orderproductmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\scripts\\entities\\orderproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\scripts\\entities\\orderproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\scripts\\services\\productcostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\scripts\\services\\productcostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\scripts\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -183,10 +187,6 @@
       "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\scripts\\services\\employeewarehouseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\scripts\\services\\storagelocationproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\scripts\\services\\storagelocationproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|w:\\vkr\\server\\storageapi\\storageapi\\update.sh||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{0E5DF1A0-3530-4176-A29B-01AD3EE765AC}|StorageAPI\\StorageAPI.csproj|solutionrelative:storageapi\\update.sh||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
@@ -280,34 +280,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 210,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "OrderProduct.cs",
-              "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\OrderProduct.cs",
-              "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Entities\\OrderProduct.cs",
-              "ToolTip": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\OrderProduct.cs",
-              "RelativeToolTip": "StorageAPI\\Scripts\\Entities\\OrderProduct.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T15:57:32.078Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrderModel.cs",
-              "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Models\\OrderModel.cs",
-              "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Models\\OrderModel.cs",
-              "ToolTip": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Models\\OrderModel.cs",
-              "RelativeToolTip": "StorageAPI\\Scripts\\Models\\OrderModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T15:52:54.451Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -316,40 +290,27 @@
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\OrderService.cs",
               "ToolTip": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\OrderService.cs",
               "RelativeToolTip": "StorageAPI\\Scripts\\Services\\OrderService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAFAAAA",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAgwGAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-23T13:08:59.402Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "ProductService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\ProductService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\ProductService.cs",
               "ToolTip": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\ProductService.cs",
               "RelativeToolTip": "StorageAPI\\Scripts\\Services\\ProductService.cs",
-              "ViewState": "AQIAAGsAAAAAAAAAAAAIwBgAAAAgAAAA",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAIwBgAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-23T13:17:02.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Order.cs",
-              "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\Order.cs",
-              "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Entities\\Order.cs",
-              "ToolTip": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\Order.cs",
-              "RelativeToolTip": "StorageAPI\\Scripts\\Entities\\Order.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAtwA8AAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T13:12:44.356Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "OrderProductService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\OrderProductService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\OrderProductService.cs",
@@ -361,7 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "OrderProductModel.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Models\\OrderProductModel.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Models\\OrderProductModel.cs",
@@ -369,12 +330,11 @@
               "RelativeToolTip": "StorageAPI\\Scripts\\Models\\OrderProductModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T10:31:26.658Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T10:31:26.658Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "OrderStatusService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\OrderStatusService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\OrderStatusService.cs",
@@ -387,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "ProductCost.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\ProductCost.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Entities\\ProductCost.cs",
@@ -399,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Product.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\Product.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Entities\\Product.cs",
@@ -411,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "StorageDbContext.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\StorageDbContext.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\StorageDbContext.cs",
@@ -423,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "OrderStatus.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\OrderStatus.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Entities\\OrderStatus.cs",
@@ -431,25 +391,24 @@
               "RelativeToolTip": "StorageAPI\\Scripts\\Entities\\OrderStatus.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T10:21:34.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T10:21:34.623Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "SettingsService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\SettingsService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\SettingsService.cs",
               "ToolTip": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\SettingsService.cs",
               "RelativeToolTip": "StorageAPI\\Scripts\\Services\\SettingsService.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAowGQAAAASAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAowFYAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-13T16:05:17.484Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "EmployeeService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\EmployeeService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\EmployeeService.cs",
@@ -457,12 +416,11 @@
               "RelativeToolTip": "StorageAPI\\Scripts\\Services\\EmployeeService.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T11:54:39.592Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T11:54:39.592Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "ProductModel.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Models\\ProductModel.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Models\\ProductModel.cs",
@@ -470,12 +428,73 @@
               "RelativeToolTip": "StorageAPI\\Scripts\\Models\\ProductModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T13:39:00.237Z",
+              "WhenOpened": "2024-06-10T13:39:00.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductCostService.cs",
+              "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\ProductCostService.cs",
+              "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\ProductCostService.cs",
+              "ToolTip": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\ProductCostService.cs",
+              "RelativeToolTip": "StorageAPI\\Scripts\\Services\\ProductCostService.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAowCEAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T20:49:55.8Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StorageLocationProductService.cs",
+              "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\StorageLocationProductService.cs",
+              "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\StorageLocationProductService.cs",
+              "ToolTip": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\StorageLocationProductService.cs",
+              "RelativeToolTip": "StorageAPI\\Scripts\\Services\\StorageLocationProductService.cs",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAIwC0AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T13:23:15.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Order.cs",
+              "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Entities\\Order.cs",
+              "ToolTip": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\Order.cs",
+              "RelativeToolTip": "StorageAPI\\Scripts\\Entities\\Order.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAtwA8AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T13:12:44.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderModel.cs",
+              "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Models\\OrderModel.cs",
+              "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Models\\OrderModel.cs",
+              "ToolTip": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Models\\OrderModel.cs",
+              "RelativeToolTip": "StorageAPI\\Scripts\\Models\\OrderModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T15:52:54.451Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "OrderProduct.cs",
+              "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\OrderProduct.cs",
+              "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Entities\\OrderProduct.cs",
+              "ToolTip": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\OrderProduct.cs",
+              "RelativeToolTip": "StorageAPI\\Scripts\\Entities\\OrderProduct.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T15:57:32.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "OrderController.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Controllers\\OrderController.cs",
@@ -487,7 +506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "ProductHistoryService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\ProductHistoryService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\ProductHistoryService.cs",
@@ -499,19 +518,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ProductCostService.cs",
-              "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\ProductCostService.cs",
-              "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\ProductCostService.cs",
-              "ToolTip": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\ProductCostService.cs",
-              "RelativeToolTip": "StorageAPI\\Scripts\\Services\\ProductCostService.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAowCEAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T20:49:55.8Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Employee.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\Employee.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Entities\\Employee.cs",
@@ -523,7 +530,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "EmployeeWarehouse.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\EmployeeWarehouse.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Entities\\EmployeeWarehouse.cs",
@@ -535,7 +542,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "ProductCostModel.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Models\\ProductCostModel.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Models\\ProductCostModel.cs",
@@ -547,7 +554,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "ProductHistoryModel.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Models\\ProductHistoryModel.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Models\\ProductHistoryModel.cs",
@@ -559,7 +566,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "ClientService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\ClientService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\ClientService.cs",
@@ -571,7 +578,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "StorageLocationProductModel.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Models\\StorageLocationProductModel.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Models\\StorageLocationProductModel.cs",
@@ -583,7 +590,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "EmployeeWarehouseModel.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Models\\EmployeeWarehouseModel.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Models\\EmployeeWarehouseModel.cs",
@@ -595,7 +602,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "UnitOfMeasureController.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Controllers\\UnitOfMeasureController.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Controllers\\UnitOfMeasureController.cs",
@@ -607,7 +614,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "StorageLocationService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\StorageLocationService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\StorageLocationService.cs",
@@ -619,7 +626,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "StorageLocationModel.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Models\\StorageLocationModel.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Models\\StorageLocationModel.cs",
@@ -631,7 +638,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "ProductController.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Controllers\\ProductController.cs",
@@ -643,7 +650,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "StorageParametersService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\StorageParametersService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\StorageParametersService.cs",
@@ -655,7 +662,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "SupplierService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\SupplierService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\SupplierService.cs",
@@ -667,7 +674,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "UnitOfMeasureService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\UnitOfMeasureService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\UnitOfMeasureService.cs",
@@ -679,7 +686,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "WarehouseService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\WarehouseService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\WarehouseService.cs",
@@ -691,7 +698,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "OperationTypeService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\OperationTypeService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\OperationTypeService.cs",
@@ -703,7 +710,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "ManufacturerService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\ManufacturerService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\ManufacturerService.cs",
@@ -715,7 +722,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "WarehouseController.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Controllers\\WarehouseController.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Controllers\\WarehouseController.cs",
@@ -727,7 +734,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "Client.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\Client.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Entities\\Client.cs",
@@ -739,7 +746,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "ContactPerson.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\ContactPerson.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Entities\\ContactPerson.cs",
@@ -751,7 +758,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "StorageParameters.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\StorageParameters.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Entities\\StorageParameters.cs",
@@ -763,7 +770,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "Supplier.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\Supplier.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Entities\\Supplier.cs",
@@ -775,7 +782,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "ProductHistory.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\ProductHistory.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Entities\\ProductHistory.cs",
@@ -787,7 +794,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "OperationType.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Entities\\OperationType.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Entities\\OperationType.cs",
@@ -799,7 +806,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "StorageLocationController.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Controllers\\StorageLocationController.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Controllers\\StorageLocationController.cs",
@@ -811,7 +818,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "EmployeeWarehouseService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\EmployeeWarehouseService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\EmployeeWarehouseService.cs",
@@ -823,7 +830,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "ContactPersonService.cs",
               "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\ContactPersonService.cs",
               "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\ContactPersonService.cs",
@@ -833,18 +840,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-18T15:10:17.342Z",
               "EditorCaption": " [\u0422\u043E\u043B\u044C\u043A\u043E \u0447\u0442\u0435\u043D\u0438\u0435]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "StorageLocationProductService.cs",
-              "DocumentMoniker": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\StorageLocationProductService.cs",
-              "RelativeDocumentMoniker": "StorageAPI\\Scripts\\Services\\StorageLocationProductService.cs",
-              "ToolTip": "W:\\VKR\\Server\\StorageAPI\\StorageAPI\\Scripts\\Services\\StorageLocationProductService.cs",
-              "RelativeToolTip": "StorageAPI\\Scripts\\Services\\StorageLocationProductService.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAgwC0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T13:23:15.011Z"
             },
             {
               "$type": "Document",

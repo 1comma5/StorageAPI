@@ -60,6 +60,7 @@ public class OrderService
         var employee = await _context.Employees.FirstOrDefaultAsync(x => x.Id == orderModel.EmployeeId && !x.IsDeleted);
         var orderStatus = await _context.OrderStatusEnumerable.FirstOrDefaultAsync(x => x.Name == orderModel.OrderStatus);
 
+
         if (orderStatus == null)
         {
             orderStatus = new OrderStatus
@@ -85,7 +86,8 @@ public class OrderService
         {
             Client = client,
             Employee = employee,
-            OrderStatus = orderStatus
+            OrderStatus = orderStatus,
+            ExecutionDate = DateTime.UtcNow // Установите значение ExecutionDate
         };
 
         _context.Orders.Add(order);
