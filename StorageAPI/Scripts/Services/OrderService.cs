@@ -20,7 +20,6 @@ public class OrderService
             .Include(x => x.Client)
             .Include(x => x.Employee)
             .Include(x => x.OrderStatus)
-            .Include(x => x.ExecutionDate)
             .FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted);
 
         if (order == null) return null;

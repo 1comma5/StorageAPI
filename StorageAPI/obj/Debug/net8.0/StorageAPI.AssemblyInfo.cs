@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StorageAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0912d3197407baa3e24ad63d6645e192a8a44c62")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2362c89a648ec3dbc19a4ab856a9132d40757927")]
 [assembly: System.Reflection.AssemblyProductAttribute("StorageAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StorageAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<StorageDbContext>(options =>
 {
     
-    // options.UseNpgsql("Host=localhost;Port=5432;Database=storage_service;Username=postgres;Password=2560");
+    //options.UseNpgsql("Host=localhost;Port=5432;Database=storage_service;Username=postgres;Password=2560");
     options.UseNpgsql("Host=147.45.140.87;Port=5432;Database=default_db;Username=gen_user;Password=^S}qYNp3z>XJ_p");
     //options.UseNpgsql("Host=localhost;Port=5432;Database=storage_service;Username=postgres;Password=2560");
 });
