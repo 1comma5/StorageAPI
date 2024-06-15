@@ -59,6 +59,7 @@ public class OrderService
         var client = await _context.Clients.FirstOrDefaultAsync(x => x.Id == orderModel.ClientId && !x.IsDeleted);
         var employee = await _context.Employees.FirstOrDefaultAsync(x => x.Id == orderModel.EmployeeId && !x.IsDeleted);
         var orderStatus = await _context.OrderStatusEnumerable.FirstOrDefaultAsync(x => x.Name == orderModel.OrderStatus);
+  
 
 
         if (orderStatus == null)
