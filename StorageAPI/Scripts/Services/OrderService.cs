@@ -109,6 +109,7 @@ public class OrderService
         }
 
         await _context.SaveChangesAsync(); // Сохраняем новый заказ в базу данных
+        orderModel.ExecutionDate = order.ExecutionDate;
 
         return orderModel;
     }
