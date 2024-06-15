@@ -162,6 +162,7 @@ public class OrderService
         order.Client = client;
         order.Employee = employee;
         order.OrderStatus = orderStatus;
+        order.ExecutionDate = DateTime.UtcNow;
 
         // Создать orderProducts
         foreach (var productModel in orderModel.Products)
