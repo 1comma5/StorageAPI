@@ -150,7 +150,6 @@ public class OrderService
             orderStatus = new OrderStatus
             {
                 Name = orderModel.OrderStatus,
-                Description = "" // или другое дефолтное значение
             };
             await _context.OrderStatusEnumerable.AddAsync(orderStatus);
         }
