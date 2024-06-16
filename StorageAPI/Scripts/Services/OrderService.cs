@@ -147,7 +147,11 @@ public class OrderService
 
         if (orderStatus == null)
         {
-            orderStatus = new OrderStatus { Name = orderModel.OrderStatus };
+            orderStatus = new OrderStatus
+            {
+                Name = orderModel.OrderStatus,
+                Description = "" // или другое дефолтное значение
+            };
             await _context.OrderStatusEnumerable.AddAsync(orderStatus);
         }
 
