@@ -13,6 +13,8 @@ public class Product
     public int ArticleCode { get; set; }
     public string AdditionalNumber { get; set; }
 
+    public int Quantity { get; set; }
+
     [ForeignKey("ManufacturerId")]
     public Manufacturer Manufacturer { get; set; }
 

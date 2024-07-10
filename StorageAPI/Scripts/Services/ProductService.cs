@@ -31,7 +31,7 @@ public class ProductService
             product.Manufacturer.Id,
             product.UnitOfMeasure.Id,
             product.Category.Id,
-            0
+            product.Quantity
         );
     }
 
@@ -60,7 +60,8 @@ public class ProductService
             AdditionalNumber = productModel.AdditionalNumber,
             Manufacturer = manufacturer,
             UnitOfMeasure = unitOfMeasure,
-            Category = category
+            Category = category,
+            Quantity = productModel.Quantity
         };
 
         await _context.Products.AddAsync(product);
@@ -90,7 +91,7 @@ public class ProductService
             product.Manufacturer.Id,
             product.UnitOfMeasure.Id,
             product.Category.Id,
-            storageLocationProduct.Quantity
+            product.Quantity
         );
  }
 
@@ -123,7 +124,7 @@ public async Task<ProductModel?> Update(ProductModel productModel)
             product.Manufacturer.Id,
             product.UnitOfMeasure.Id,
             product.Category.Id,
-            0
+            product.Quantity
         );
     }
 
@@ -154,7 +155,7 @@ public async Task<ProductModel?> Update(ProductModel productModel)
             x.Manufacturer.Id,
             x.UnitOfMeasure.Id,
             x.Category.Id,
-            0
+            x.Quantity
         )).ToList();
     }
 
@@ -180,7 +181,7 @@ public async Task<ProductModel?> Update(ProductModel productModel)
             x.Product.Manufacturer.Id,
             x.Product.UnitOfMeasure.Id,
             x.Product.Category.Id,
-            0
+            x.Quantity
         )).ToList();
     }
 
