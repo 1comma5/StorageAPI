@@ -111,6 +111,7 @@ public async Task<ProductModel?> Update(ProductModel productModel)
         if (manufacturer != null) product.Manufacturer = manufacturer;
         if (unitOfMeasure != null) product.UnitOfMeasure = unitOfMeasure;
         if (category != null) product.Category = category;
+        product.Quantity = productModel.Quantity;
 
         _context.Products.Update(product);
         await _context.SaveChangesAsync();

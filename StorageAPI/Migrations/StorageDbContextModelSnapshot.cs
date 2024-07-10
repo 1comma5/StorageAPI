@@ -339,6 +339,9 @@ namespace StorageAPI.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
+
                     b.Property<int>("UnitOfMeasureId")
                         .HasColumnType("integer");
 

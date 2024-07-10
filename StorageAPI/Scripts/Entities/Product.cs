@@ -12,7 +12,6 @@ public class Product
     public string Description { get; set; }
     public int ArticleCode { get; set; }
     public string AdditionalNumber { get; set; }
-
     public int Quantity { get; set; }
 
     [ForeignKey("ManufacturerId")]
