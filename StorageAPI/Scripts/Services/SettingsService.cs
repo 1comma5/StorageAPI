@@ -138,7 +138,8 @@ namespace StorageAPI.Scripts.Services
                     AdditionalNumber = "1",
                     Manufacturer = manufacturer,
                     UnitOfMeasure = unitOfMeasures,
-                    Category = category
+                    Category = category,
+                    Quantity = 20
                 };
                 await _context.Products.AddAsync(product);
                 await _context.SaveChangesAsync();
